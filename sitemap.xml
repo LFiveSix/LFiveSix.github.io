@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>www.LFiveSix.com/visit/</loc>
+    
+    <lastmod>2017-11-20T16:19:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>www.LFiveSix.com/bitbucket/</loc>
+    
+    <lastmod>2017-11-20T16:17:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>www.LFiveSix.com/hello-world/</loc>
     
-    <lastmod>2017-11-19T11:02:51.000Z</lastmod>
+    <lastmod>2017-11-20T14:37:17.000Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>www.LFiveSix.com/about/index.html</loc>
     
     <lastmod>2017-11-14T16:04:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>www.LFiveSix.com/visit/</loc>
-    
-    <lastmod>2017-11-14T16:04:25.000Z</lastmod>
     
   </url>
   
