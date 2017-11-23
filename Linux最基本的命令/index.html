@@ -15,14 +15,18 @@
 
 
 
-<meta name="keywords" content="python,mac">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LFiveSix&#39;s Blog">
-<meta property="og:url" content="www.LFiveSix.com/tags/bitbucket/index.html">
+<meta name="description" content="记录下自己总也忘记的一些最基本的命令">
+<meta name="keywords" content="Linux 基本命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 基本命令">
+<meta property="og:url" content="www.LFiveSix.com/Linux最基本的命令/index.html">
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
+<meta property="og:description" content="记录下自己总也忘记的一些最基本的命令">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-23T14:23:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LFiveSix&#39;s Blog">
+<meta name="twitter:title" content="Linux 基本命令">
+<meta name="twitter:description" content="记录下自己总也忘记的一些最基本的命令">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -49,13 +53,13 @@
 
 
 
-<meta name="keywords" content="python,mac">
+<meta name="keywords" content="Linux 基本命令,python,mac">
 
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: bitbucket | LFiveSix&#39;s Blog</title>
+<title>Linux 基本命令 | LFiveSix&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +69,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -270,56 +274,175 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Linux最基本的命令" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/bitbucket/" class="archive-article-date">
-      <time datetime="2017-11-20T13:46:17.000Z" itemprop="datePublished">11-20</time>
+    <div class="article-meta">
+      <a href="/Linux最基本的命令/" class="article-date">
+      <time datetime="2017-11-22T16:00:00.000Z" itemprop="datePublished">2017-11-23</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/bitbucket/">bitbucket</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 基本命令
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitbucket/">bitbucket</a></li></ul>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/自用笔记/">自用笔记</a>
     </div>
 
-        </div>
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>记录下自己总也忘记的一些最基本的命令</p>
+<a id="more"></a>
+<h2 id="Linux最基本的命令"><a href="#Linux最基本的命令" class="headerlink" title="Linux最基本的命令"></a>Linux最基本的命令</h2><h3 id="scp（快捷的复制粘贴）"><a href="#scp（快捷的复制粘贴）" class="headerlink" title="scp（快捷的复制粘贴）"></a>scp（快捷的复制粘贴）</h3><h3 id="从服务器复制文件到本机（在本地终端运行）"><a href="#从服务器复制文件到本机（在本地终端运行）" class="headerlink" title="从服务器复制文件到本机（在本地终端运行）"></a>从服务器复制文件到本机（在本地终端运行）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r ***@***:/123123 /Users/li/</span><br><span class="line">```   </span><br><span class="line">*** @***是你的服务器地址，123123是你要复制的文件夹，/Users/li/ 是你要复制到本地的路径  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$$$ 切记，复制文件夹要加 -r $$$</span><br><span class="line">``` </span><br><span class="line">  </span><br><span class="line"><span class="comment">### 从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限</span></span><br><span class="line"><span class="comment">#### root权限(复制本地123文件夹到服务器的try文件夹下）  </span></span><br><span class="line">``` bash</span><br><span class="line">$ scp -r /Users/li/123 root@*****:/try</span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 非root权限(复制本地123文件夹到服务器）</span></span><br><span class="line">``` bash</span><br><span class="line">$ scp -r /Users/li/123 root@*****:/</span><br><span class="line">```  </span><br><span class="line">上面例子的try就不能写了，没有权限只能写到根目录下</span><br><span class="line"></span><br><span class="line"><span class="comment">### mv 更名、移动文件</span></span><br><span class="line">``` bash</span><br><span class="line">$ mv A B</span><br><span class="line">``` </span><br><span class="line">此路径下无B文件夹，A将更名为B</span><br><span class="line">``` bash</span><br><span class="line">$ mv A /B/c/</span><br></pre></td></tr></table></figure>
+<p>A将移动到c路径下</p>
+<h3 id="kill-杀死进程"><a href="#kill-杀死进程" class="headerlink" title="kill 杀死进程"></a>kill 杀死进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br></pre></td></tr></table></figure>
+<p>-9 强迫进程立即停止</p>
+<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><h4 id="查看uwsgi的进程"><a href="#查看uwsgi的进程" class="headerlink" title="查看uwsgi的进程"></a>查看uwsgi的进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure>
+<h4 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/Linux最基本的命令/">Linux 基本命令</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
+        <p><span>发布时间:</span>2017-11-23, 00:00:00</p>
+        <p><span>最后更新:</span>2017-11-23, 22:23:00</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/Linux最基本的命令/" title="Linux 基本命令">www.LFiveSix.com/Linux最基本的命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: www.LFiveSix.com/Linux最基本的命令/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/mac安装mongodb/">
+                    mac 安装MongoDB
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux最基本的命令"><span class="toc-number">1.</span> <span class="toc-text">Linux最基本的命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#scp（快捷的复制粘贴）"><span class="toc-number">1.1.</span> <span class="toc-text">scp（快捷的复制粘贴）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从服务器复制文件到本机（在本地终端运行）"><span class="toc-number">1.2.</span> <span class="toc-text">从服务器复制文件到本机（在本地终端运行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill-杀死进程"><span class="toc-number">1.3.</span> <span class="toc-text">kill 杀死进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看进程"><span class="toc-number">1.4.</span> <span class="toc-text">查看进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看uwsgi的进程"><span class="toc-number">1.4.1.</span> <span class="toc-text">查看uwsgi的进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列出目前所有的正在内存中的程序"><span class="toc-number">1.4.2.</span> <span class="toc-text">列出目前所有的正在内存中的程序</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Linux 基本命令　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/mac安装mongodb/" title="下一篇: mac 安装MongoDB">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">页面装修中！</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
