@@ -31,32 +31,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -85,6 +59,32 @@ dir
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
         
