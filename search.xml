@@ -31,6 +31,58 @@
     </entry>
     
     <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><ul>
+<li>男儿本色  </li>
+<li>大话西游（我女神朱茵） </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -67,26 +119,34 @@ $ brew list (已经不存在 mongodb)
     </entry>
     
     <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+      <title><![CDATA[读书清单]]></title>
+      <url>/books/</url>
+      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
 <a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
+<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul>
+<li>python web 开发实战  </li>
+<li>python 核心编程（第三版） </li>
+<li>代码大全（第二版）</li>
+</ul>
+<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul>
+<li>人性的弱点  </li>
+<li>失控  </li>
+<li>博弈心理学  </li>
+<li>人性的优点  </li>
+<li>人类简史  </li>
+</ul>
 ]]></content>
       
         <categories>
             
-            <category> 自用笔记 </category>
+            <category> 读书清单 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> windows </tag>
+            <tag> books </tag>
             
         </tags>
         
@@ -222,11 +282,11 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[页面装修中！]]></title>
+      <title><![CDATA[走在全栈的路上]]></title>
       <url>/visit/</url>
-      <content type="html"><![CDATA[<p>此博客是笔者学习的笔记及一些心得。<br><a id="more"></a></p>
-<p>文章内容仅供参考！</p>
-]]></content>
+      <content type="html"><![CDATA[<p>师傅说他是“一个用了5年时间才刚刚入门的全栈工程师” ，我的小目标就是追上他、超过他、干掉他！有目标，才有前进的动力<br><a id="more"></a></p>
+<p>1992年的四月家里多了一个我。<br>2011年，生病休学。<br>2013年，顺利考入哈理工、软件工程系。<br>2013-2016年6月，逃课、打游戏、当服务员、当家教，好像就没学习。<br>2016年8月意识到自己面临的难题，恶补专业知识。<br>2016年9月进京，开始找运营，产品，测试。<br>2016年10月，进联想作运行实习生，做了不到一个月还是有着一颗开发的心，辞职，找前端。<br>2016年11月中旬，进入vinci做python实习生，遇见了我师傅。当时是面试前端，被师傅所吸引，进公司做了python实习生。<br>2017年5月-7月，转正失败，回学校，在师傅的帮助下跌跌撞撞，顺利毕业。<br>2017年8月进京，找工作。</p>
+<h2 id="全栈的路上一去不复返！！！"><a href="#全栈的路上一去不复返！！！" class="headerlink" title="全栈的路上一去不复返！！！"></a>全栈的路上一去不复返！！！</h2><h3 id="最应该感谢我师傅，他对我在这个行业的抉择影响很大，他把我带进了这个行业，并且让我从另一个角度认识了这个行业。我离开他的时候说过，自己要向他一样成为一位全栈工程师。其实还是蛮想在他手下和他一起做事的，他的思维很特别。在他的博客中看见，30岁，他还想创业，期待可以与他共伍。"><a href="#最应该感谢我师傅，他对我在这个行业的抉择影响很大，他把我带进了这个行业，并且让我从另一个角度认识了这个行业。我离开他的时候说过，自己要向他一样成为一位全栈工程师。其实还是蛮想在他手下和他一起做事的，他的思维很特别。在他的博客中看见，30岁，他还想创业，期待可以与他共伍。" class="headerlink" title="最应该感谢我师傅，他对我在这个行业的抉择影响很大，他把我带进了这个行业，并且让我从另一个角度认识了这个行业。我离开他的时候说过，自己要向他一样成为一位全栈工程师。其实还是蛮想在他手下和他一起做事的，他的思维很特别。在他的博客中看见，30岁，他还想创业，期待可以与他共伍。"></a>最应该感谢我师傅，他对我在这个行业的抉择影响很大，他把我带进了这个行业，并且让我从另一个角度认识了这个行业。我离开他的时候说过，自己要向他一样成为一位全栈工程师。其实还是蛮想在他手下和他一起做事的，他的思维很特别。在他的博客中看见，30岁，他还想创业，期待可以与他共伍。</h3>]]></content>
       
         
     </entry>
