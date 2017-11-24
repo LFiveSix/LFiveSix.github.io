@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.LFiveSix.com/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</loc>
+    <loc>www.LFiveSix.com/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</loc>
     
     <lastmod>2017-11-23T14:34:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
+    <loc>www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2017-11-23T14:23:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
+    <loc>www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
     
     <lastmod>2017-11-23T13:28:44.000Z</lastmod>
     
@@ -51,9 +51,30 @@
   </url>
   
   <url>
+    <loc>www.LFiveSix.com/categories/index.html</loc>
+    
+    <lastmod>2017-11-14T16:04:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>www.LFiveSix.com/tags/index.html</loc>
+    
+    <lastmod>2017-11-14T16:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>www.LFiveSix.com/markdown/</loc>
     
     <lastmod>2017-11-14T16:04:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>www.LFiveSix.com/about/index.html</loc>
+    
+    <lastmod>2017-11-14T16:04:27.000Z</lastmod>
     
   </url>
   
