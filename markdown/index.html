@@ -147,8 +147,6 @@
                             
                                 <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=96423783" title="网易云音乐"></a>
                             
-                                <a class="fa 微信" href="/Wechat" title="微信"></a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -216,8 +214,6 @@
                                 <a class="fa GitHub" target="_blank" href="https://github.com/LFiveSix" title="GitHub"></a>
                             
                                 <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=96423783" title="网易云音乐"></a>
-                            
-                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -439,6 +435,43 @@
 
 
 
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2149770';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
     
 
 

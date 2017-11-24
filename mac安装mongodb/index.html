@@ -142,8 +142,6 @@
                             
                                 <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=96423783" title="网易云音乐"></a>
                             
-                                <a class="fa 微信" href="/Wechat" title="微信"></a>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -211,8 +209,6 @@
                                 <a class="fa GitHub" target="_blank" href="https://github.com/LFiveSix" title="GitHub"></a>
                             
                                 <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=96423783" title="网易云音乐"></a>
-                            
-                                <a class="fa 微信" target="_blank" href="/Wechat" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -307,15 +303,15 @@ $ brew list (已经不存在 mongodb)
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/movies/">
-                    观影史
+                <a href="/books/">
+                    读书清单
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/books/">
-                    读书清单
+                <a href="/bitbucket/">
+                    bitbucket
                 </a>
             </div>
         
@@ -377,13 +373,50 @@ $ brew list (已经不存在 mongodb)
 
 
     
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2149770';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
 
 
 
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/movies/" title="上一篇: 观影史">
+            <a href="/books/" title="上一篇: 读书清单">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -391,7 +424,7 @@ $ brew list (已经不存在 mongodb)
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/books/" title="下一篇: 读书清单">
+            <a href="/bitbucket/" title="下一篇: bitbucket">
                 <i class="fa fa-angle-right"></i>
             </a>
         
