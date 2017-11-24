@@ -3,15 +3,6 @@
   
     
     <entry>
-      <title></title>
-      <url>/m/</url>
-      <content type="html"><![CDATA[<p>123</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Linux 基本命令]]></title>
       <url>/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>记录下自己总也忘记的一些最基本的命令</p>

@@ -99,7 +99,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
+        search: false
     }
 </script>
 
@@ -136,13 +136,6 @@
         
 
         
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
 
 
         
@@ -156,6 +149,8 @@
                             <li><a href="/">主页</a></li>
                         
                             <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
                         
                         </ul>
                     </nav>
@@ -223,6 +218,8 @@
                     <li><a href="/">主页</a></li>
                 
                     <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -389,21 +386,6 @@ $ git push
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/bitbucket/">bitbucket</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
-        <p><span>发布时间:</span>2017-11-20, 21:46:17</p>
-        <p><span>最后更新:</span>2017-11-21, 09:33:16</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/bitbucket/" title="bitbucket">http://www.LFiveSix.com/bitbucket/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/bitbucket/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
 
 
     <nav id="article-nav">
@@ -499,7 +481,7 @@ $ git push
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/m/">m</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">页面装修中！</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">页面装修中！</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
@@ -584,7 +566,7 @@ $ git push
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
             
-             friends: "#js-friends a", 
+            
              socail: ".social a" 
         }
         for (var x in oOpenInNew) {
