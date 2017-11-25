@@ -3,6 +3,30 @@
   
     
     <entry>
+      <title><![CDATA[mac自带邮件不能登录163邮箱]]></title>
+      <url>/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>想用mac自带的邮件软件来登录163邮箱，每次登录都提示密码错误，记录一下解决办法</p>
+<a id="more"></a>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="登录网页版的163邮箱"><a href="#登录网页版的163邮箱" class="headerlink" title="登录网页版的163邮箱"></a>登录网页版的163邮箱</h3><p>在设置里面找到客户端授权密码，将其设置成开启状态，这时候系统会让你设置一个授权密码！！！<br><img src="http://oz4pkhxf8.bkt.clouddn.com/WechatIMG136.jpeg" alt=""></p>
+<h3 id="打开你的邮件"><a href="#打开你的邮件" class="headerlink" title="打开你的邮件"></a>打开你的邮件</h3><p>在系统偏好设置里添加163邮箱，输入账号登录，注意！！！密码要填写你之前设置的授权码！！！这样你就可以用mac自带的邮件登录你的163邮箱了。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> mac的小操作 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Linux 基本命令]]></title>
       <url>/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>记录下自己总也忘记的一些最基本的命令</p>
@@ -25,40 +49,6 @@
         <tags>
             
             <tag> Linux </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/books/</url>
-      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
-<a id="more"></a>
-<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul>
-<li>python web 开发实战  </li>
-<li>python 核心编程（第三版） </li>
-<li>代码大全（第二版）</li>
-</ul>
-<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul>
-<li>人性的弱点  </li>
-<li>失控  </li>
-<li>博弈心理学  </li>
-<li>人性的优点  </li>
-<li>人类简史  </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 读书清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> books </tag>
             
         </tags>
         
@@ -121,6 +111,40 @@ dir
         <tags>
             
             <tag> windows </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书清单]]></title>
+      <url>/books/</url>
+      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
+<a id="more"></a>
+<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul>
+<li>python web 开发实战  </li>
+<li>python 核心编程（第三版） </li>
+<li>代码大全（第二版）</li>
+</ul>
+<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul>
+<li>人性的弱点  </li>
+<li>失控  </li>
+<li>博弈心理学  </li>
+<li>人性的优点  </li>
+<li>人类简史  </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 读书清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> books </tag>
             
         </tags>
         
