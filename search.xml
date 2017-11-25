@@ -31,6 +31,40 @@
     </entry>
     
     <entry>
+      <title><![CDATA[读书清单]]></title>
+      <url>/books/</url>
+      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
+<a id="more"></a>
+<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul>
+<li>python web 开发实战  </li>
+<li>python 核心编程（第三版） </li>
+<li>代码大全（第二版）</li>
+</ul>
+<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul>
+<li>人性的弱点  </li>
+<li>失控  </li>
+<li>博弈心理学  </li>
+<li>人性的优点  </li>
+<li>人类简史  </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 读书清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -87,40 +121,6 @@ dir
         <tags>
             
             <tag> windows </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/books/</url>
-      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
-<a id="more"></a>
-<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul>
-<li>python web 开发实战  </li>
-<li>python 核心编程（第三版） </li>
-<li>代码大全（第二版）</li>
-</ul>
-<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul>
-<li>人性的弱点  </li>
-<li>失控  </li>
-<li>博弈心理学  </li>
-<li>人性的优点  </li>
-<li>人类简史  </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 读书清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> books </tag>
             
         </tags>
         
