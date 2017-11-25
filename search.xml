@@ -31,6 +31,68 @@
     </entry>
     
     <entry>
+      <title><![CDATA[mac 安装MongoDB]]></title>
+      <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
+      <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
+<a id="more"></a>
+<h2 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h2><h3 id="更新HomeBrew"><a href="#更新HomeBrew" class="headerlink" title="更新HomeBrew"></a>更新HomeBrew</h3><pre><code class="bash">$ brew update
+</code></pre>
+<h3 id="安装MongoDB"><a href="#安装MongoDB" class="headerlink" title="安装MongoDB"></a>安装MongoDB</h3><pre><code class="bash">$ brew install mongodb
+</code></pre>
+<h3 id="可以看见类似如下信息，信息中可以找到启动命令和配置文件路径"><a href="#可以看见类似如下信息，信息中可以找到启动命令和配置文件路径" class="headerlink" title="可以看见类似如下信息，信息中可以找到启动命令和配置文件路径"></a>可以看见类似如下信息，信息中可以找到启动命令和配置文件路径</h3><p><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG125.jpeg" alt=""></p>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><pre><code class="bash">$ brew list
+</code></pre>
+<h3 id="启动mongodb"><a href="#启动mongodb" class="headerlink" title="启动mongodb"></a>启动mongodb</h3><pre><code class="bash">$ brew services start mongodb
+</code></pre>
+<h3 id="链接mongodb"><a href="#链接mongodb" class="headerlink" title="链接mongodb"></a>链接mongodb</h3><pre><code class="bash">$ mongo
+</code></pre>
+<h3 id="卸载mongodb"><a href="#卸载mongodb" class="headerlink" title="卸载mongodb"></a>卸载mongodb</h3><pre><code class="bash">$ brew uninstall mongodb
+$ brew list (已经不存在 mongodb)
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -65,32 +127,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[观影史]]></title>
       <url>/movies/</url>
       <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
@@ -111,42 +147,6 @@ dir
         <tags>
             
             <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[mac 安装MongoDB]]></title>
-      <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
-      <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
-<a id="more"></a>
-<h2 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h2><h3 id="更新HomeBrew"><a href="#更新HomeBrew" class="headerlink" title="更新HomeBrew"></a>更新HomeBrew</h3><pre><code class="bash">$ brew update
-</code></pre>
-<h3 id="安装MongoDB"><a href="#安装MongoDB" class="headerlink" title="安装MongoDB"></a>安装MongoDB</h3><pre><code class="bash">$ brew install mongodb
-</code></pre>
-<h3 id="可以看见类似如下信息，信息中可以找到启动命令和配置文件路径"><a href="#可以看见类似如下信息，信息中可以找到启动命令和配置文件路径" class="headerlink" title="可以看见类似如下信息，信息中可以找到启动命令和配置文件路径"></a>可以看见类似如下信息，信息中可以找到启动命令和配置文件路径</h3><p><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG125.jpeg" alt=""></p>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><pre><code class="bash">$ brew list
-</code></pre>
-<h3 id="启动mongodb"><a href="#启动mongodb" class="headerlink" title="启动mongodb"></a>启动mongodb</h3><pre><code class="bash">$ brew services start mongodb
-</code></pre>
-<h3 id="链接mongodb"><a href="#链接mongodb" class="headerlink" title="链接mongodb"></a>链接mongodb</h3><pre><code class="bash">$ mongo
-</code></pre>
-<h3 id="卸载mongodb"><a href="#卸载mongodb" class="headerlink" title="卸载mongodb"></a>卸载mongodb</h3><pre><code class="bash">$ brew uninstall mongodb
-$ brew list (已经不存在 mongodb)
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> mac </tag>
             
         </tags>
         
