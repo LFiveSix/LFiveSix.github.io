@@ -4,14 +4,51 @@
 
     
   <url>
-    <loc>http://www.LFiveSix.com/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</loc>
-    <lastmod>2017-11-27T14:18:26.000Z</lastmod>
+    <loc>http://www.LFiveSix.com/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2017-11-27T14:48:10.000Z</lastmod>
     <data>
         <display>
-        <title>ubuntu 安装MongoDB</title>
+        <title>MongoDB的基本使用</title>
         <pubTime>2017-11-26T16:00:00.000Z</pubTime>
         
-        <tag>ubuntu</tag>
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/bitbucket/</loc>
+    <lastmod>2017-11-27T14:48:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>bitbucket</title>
+        <pubTime>2017-11-20T13:46:17.000Z</pubTime>
+        
+        <tag>bitbucket</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
+    <lastmod>2017-11-27T14:48:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>mac 安装MongoDB</title>
+        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
+        
+        <tag>mac, MongoDB</tag>
          
          
            
@@ -25,7 +62,7 @@
     
   <url>
     <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-11-27T13:10:11.000Z</lastmod>
+    <lastmod>2017-11-27T14:48:02.000Z</lastmod>
     <data>
         <display>
         <title>Linux 基本命令</title>
@@ -37,6 +74,86 @@
            
              
               <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</loc>
+    <lastmod>2017-11-27T14:48:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>在windows下用ls</title>
+        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
+        
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</loc>
+    <lastmod>2017-11-27T14:46:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu 安装MongoDB</title>
+        <pubTime>2017-11-26T16:00:00.000Z</pubTime>
+        
+        <tag>ubuntu, MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/books/</loc>
+    <lastmod>2017-11-27T14:31:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书清单</title>
+        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
+        
+        <tag>books</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书清单" url="http://www.LFiveSix.com/categories/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/movies/</loc>
+    <lastmod>2017-11-27T14:30:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>观影史</title>
+        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
+        
+        <tag>movies</tag>
+         
+         
+           
+             
+              <breadCrumb title="观影清单" url="http://www.LFiveSix.com/categories/%E8%A7%82%E5%BD%B1%E6%B8%85%E5%8D%95/"/>
           
         </display>
     </data>
@@ -78,103 +195,6 @@
     </url>
 
     
-  <url>
-    <loc>http://www.LFiveSix.com/movies/</loc>
-    <lastmod>2017-11-24T06:56:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>观影史</title>
-        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
-        
-        <tag>movies</tag>
-         
-         
-           
-             
-              <breadCrumb title="观影清单" url="http://www.LFiveSix.com/categories/%E8%A7%82%E5%BD%B1%E6%B8%85%E5%8D%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/books/</loc>
-    <lastmod>2017-11-24T06:53:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>读书清单</title>
-        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
-        
-        <tag>books</tag>
-         
-         
-           
-             
-              <breadCrumb title="读书清单" url="http://www.LFiveSix.com/categories/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://www.LFiveSix.com/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</loc>
-    <lastmod>2017-11-23T14:34:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>在windows下用ls</title>
-        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
-        
-        <tag>windows</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
-    <lastmod>2017-11-23T13:28:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>mac 安装MongoDB</title>
-        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/bitbucket/</loc>
-    <lastmod>2017-11-21T01:33:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>bitbucket</title>
-        <pubTime>2017-11-20T13:46:17.000Z</pubTime>
-        
-        <tag>bitbucket</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.LFiveSix.com/%E4%BF%AE%E6%94%B9mac%E7%BB%88%E7%AB%AF%E5%89%8D%E7%BC%80/</loc>
