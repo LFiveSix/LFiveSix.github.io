@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2017-11-27T12:41:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     
     <lastmod>2017-11-25T16:15:15.000Z</lastmod>
@@ -33,20 +40,6 @@
     <loc>http://www.LFiveSix.com/about/index.html</loc>
     
     <lastmod>2017-11-24T06:41:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2017-11-24T06:27:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/hello-world/</loc>
-    
-    <lastmod>2017-11-24T05:43:53.000Z</lastmod>
     
   </url>
   

@@ -31,12 +31,9 @@
       <url>/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>记录下自己总也忘记的一些最基本的命令</p>
 <a id="more"></a>
-<h2 id="Linux最基本的命令"><a href="#Linux最基本的命令" class="headerlink" title="Linux最基本的命令"></a>Linux最基本的命令</h2><h3 id="scp（快捷的复制粘贴）"><a href="#scp（快捷的复制粘贴）" class="headerlink" title="scp（快捷的复制粘贴）"></a>scp（快捷的复制粘贴）</h3><h3 id="从服务器复制文件到本机（在本地终端运行）"><a href="#从服务器复制文件到本机（在本地终端运行）" class="headerlink" title="从服务器复制文件到本机（在本地终端运行）"></a>从服务器复制文件到本机（在本地终端运行）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r ***@***:/123123 /Users/li/e</span><br><span class="line">``` </span><br><span class="line">  </span><br><span class="line">*** @***是你的服务器地址，123123是你要复制的文件夹，/Users/li/ 是你要复制到本地的路径</span><br><span class="line">``` bash</span><br><span class="line">$$$ 切记，复制文件夹要加 -r $$$</span><br></pre></td></tr></table></figure>
-<h3 id="从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限"><a href="#从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限" class="headerlink" title="从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限"></a>从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限</h3><h3 id="root权限-复制本地123文件夹到服务器的try文件夹下"><a href="#root权限-复制本地123文件夹到服务器的try文件夹下" class="headerlink" title="root权限(复制本地123文件夹到服务器的try文件夹下)"></a>root权限(复制本地123文件夹到服务器的try文件夹下)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/try</span><br></pre></td></tr></table></figure>
-<h3 id="非root权限-复制本地123文件夹到服务器"><a href="#非root权限-复制本地123文件夹到服务器" class="headerlink" title="非root权限(复制本地123文件夹到服务器)"></a>非root权限(复制本地123文件夹到服务器)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/</span><br><span class="line">```  </span><br><span class="line">上面例子的try就不能写了，没有权限只能写到根目录下</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### mv 更名、移动文件</span></span><br><span class="line">``` bash</span><br><span class="line">$ mv A B</span><br><span class="line">```  </span><br><span class="line">此路径下无B文件夹，A将更名为B  </span><br><span class="line"><span class="comment">### 链接mongodb</span></span><br><span class="line">``` bash</span><br><span class="line">$ mv A /B/c/</span><br><span class="line">```  </span><br><span class="line">A将移动到c路径下</span><br><span class="line"></span><br><span class="line"><span class="comment">### kill 杀死进程</span></span><br><span class="line">``` bash</span><br><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br></pre></td></tr></table></figure>
-<p>-9 强迫进程立即停止</p>
-<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><h4 id="查看uwsgi的进程"><a href="#查看uwsgi的进程" class="headerlink" title="查看uwsgi的进程"></a>查看uwsgi的进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure>
-<h4 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
+<h2 id="Linux最基本的命令"><a href="#Linux最基本的命令" class="headerlink" title="Linux最基本的命令"></a>Linux最基本的命令</h2><h3 id="scp（复制粘贴）"><a href="#scp（复制粘贴）" class="headerlink" title="scp（复制粘贴）"></a>scp（复制粘贴）</h3><p>从服务器复制文件到本机（在本地终端运行）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r ***@***:/123123 /Users/li/e</span><br><span class="line">```  </span><br><span class="line">@是你的服务器地址，123123是你要复制的文件夹，/Users/li/ 是你要复制到本地的路径  </span><br><span class="line">``` bash</span><br><span class="line">$ 切记，文件夹要加-r</span><br></pre></td></tr></table></figure></p>
+<h3 id="从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限"><a href="#从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限" class="headerlink" title="从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限"></a>从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限</h3><p>root权限(复制本地123文件夹到服务器的try文件夹下)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/try</span><br><span class="line">```  </span><br><span class="line">非root权限(复制本地123文件夹到服务器)  </span><br><span class="line">``` bash</span><br><span class="line">$ scp -r /Users/li/123 root@*****:/</span><br><span class="line">```   </span><br><span class="line">上面例子的try就不能写了，没有权限只能写到根目录下</span><br><span class="line"></span><br><span class="line"><span class="comment">### mv 更名、移动文件  </span></span><br><span class="line">``` bash</span><br><span class="line">$ mv A B</span><br><span class="line">```  </span><br><span class="line">此路径下无B文件夹，A将更名为B  </span><br><span class="line">``` bash</span><br><span class="line">$ mv A /B/c/</span><br><span class="line">```  </span><br><span class="line">A将移动到c路径下</span><br><span class="line"></span><br><span class="line"><span class="comment">### kill 杀死进程  </span></span><br><span class="line">``` bash</span><br><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br><span class="line">```  </span><br><span class="line">-9 强迫进程立即停止</span><br><span class="line"></span><br><span class="line"><span class="comment">### 查看进程  </span></span><br><span class="line">查看uwsgi的进程  </span><br><span class="line">``` bash</span><br><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure></p>
+<h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -85,6 +82,32 @@ $ brew list (已经不存在 mongodb)
         <tags>
             
             <tag> mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
         
@@ -145,32 +168,6 @@ $ brew list (已经不存在 mongodb)
         <tags>
             
             <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
             
         </tags>
         
@@ -285,23 +282,6 @@ $ git push
             <tag> bitbucket </tag>
             
         </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      
         
     </entry>
     
