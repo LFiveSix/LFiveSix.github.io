@@ -31,7 +31,7 @@
       <url>/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>记录下自己总也忘记的一些最基本的命令</p>
 <a id="more"></a>
-<h2 id="Linux最基本的命令"><a href="#Linux最基本的命令" class="headerlink" title="Linux最基本的命令"></a>Linux最基本的命令</h2><h3 id="scp（复制粘贴）"><a href="#scp（复制粘贴）" class="headerlink" title="scp（复制粘贴）"></a>scp（复制粘贴）</h3><p>从服务器复制文件到本机（在本地终端运行）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r ***@***:/123123 /Users/li/e</span><br><span class="line">```  </span><br><span class="line">@是你的服务器地址，123123是你要复制的文件夹，/Users/li/ 是你要复制到本地的路径  </span><br><span class="line">``` bash</span><br><span class="line">$ 切记，文件夹要加-r</span><br></pre></td></tr></table></figure></p>
+<h2 id="Linux最基本的命令"><a href="#Linux最基本的命令" class="headerlink" title="Linux最基本的命令"></a>Linux最基本的命令</h2><h3 id="scp（复制粘贴）"><a href="#scp（复制粘贴）" class="headerlink" title="scp（复制粘贴）"></a>scp（复制粘贴）</h3><p>从服务器复制文件到本机(在本地终端运行)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r ***@***:/123123 /Users/li/e</span><br><span class="line">```  </span><br><span class="line">@是你的服务器地址，123123是你要复制的文件夹，/Users/li/ 是你要复制到本地的路径  </span><br><span class="line">``` bash</span><br><span class="line">$ 切记，文件夹要加-r</span><br></pre></td></tr></table></figure></p>
 <h3 id="从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限"><a href="#从本地复制文件到服务器-在本地终端运行-有一点需要注意的是你是否拥有root权限" class="headerlink" title="从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限"></a>从本地复制文件到服务器(在本地终端运行),有一点需要注意的是你是否拥有root权限</h3><p>root权限(复制本地123文件夹到服务器的try文件夹下)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/try</span><br><span class="line">```  </span><br><span class="line">非root权限(复制本地123文件夹到服务器)  </span><br><span class="line">``` bash</span><br><span class="line">$ scp -r /Users/li/123 root@*****:/</span><br><span class="line">```   </span><br><span class="line">上面例子的try就不能写了，没有权限只能写到根目录下</span><br><span class="line"></span><br><span class="line"><span class="comment">### mv 更名、移动文件  </span></span><br><span class="line">``` bash</span><br><span class="line">$ mv A B</span><br><span class="line">```  </span><br><span class="line">此路径下无B文件夹，A将更名为B  </span><br><span class="line">``` bash</span><br><span class="line">$ mv A /B/c/</span><br><span class="line">```  </span><br><span class="line">A将移动到c路径下</span><br><span class="line"></span><br><span class="line"><span class="comment">### kill 杀死进程  </span></span><br><span class="line">``` bash</span><br><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br><span class="line">```  </span><br><span class="line">-9 强迫进程立即停止</span><br><span class="line"></span><br><span class="line"><span class="comment">### 查看进程  </span></span><br><span class="line">查看uwsgi的进程  </span><br><span class="line">``` bash</span><br><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure></p>
 <h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -46,6 +46,32 @@
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
         
@@ -86,6 +112,32 @@
     </entry>
     
     <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><ul>
+<li>男儿本色  </li>
+<li>大话西游（我女神朱茵） </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -116,58 +168,6 @@ $ brew list (已经不存在 mongodb)
         <tags>
             
             <tag> mac </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><ul>
-<li>男儿本色  </li>
-<li>大话西游（我女神朱茵） </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
             
         </tags>
         
