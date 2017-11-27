@@ -37,8 +37,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/try</span><br></pre></td></tr></table></figure>
 <p>非root权限(复制本地123文件夹到服务器)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r /Users/li/123 root@*****:/</span><br></pre></td></tr></table></figure></p>
 <p>上面例子的try就不能写了，没有权限只能写到根目录下</p>
-<h3 id="mv-更名、移动文件"><a href="#mv-更名、移动文件" class="headerlink" title="mv 更名、移动文件"></a>mv 更名、移动文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ mv A B</span><br><span class="line">```  </span><br><span class="line">此路径下无B文件夹，A将更名为B  </span><br><span class="line">``` bash</span><br><span class="line">$ mv A /B/c/</span><br><span class="line">```  </span><br><span class="line">A将移动到c路径下</span><br><span class="line"></span><br><span class="line"><span class="comment">### kill 杀死进程</span></span><br><span class="line">  </span><br><span class="line">``` bash</span><br><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br><span class="line">```  </span><br><span class="line">-9 强迫进程立即停止</span><br><span class="line"></span><br><span class="line"><span class="comment">### 查看进程</span></span><br><span class="line">  </span><br><span class="line">查看uwsgi的进程  </span><br><span class="line">``` bash</span><br><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure>
-<h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="mv-更名、移动文件"><a href="#mv-更名、移动文件" class="headerlink" title="mv 更名、移动文件"></a>mv 更名、移动文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv A B</span><br></pre></td></tr></table></figure>
+<p>此路径下无B文件夹，A将更名为B</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv A /B/c/</span><br></pre></td></tr></table></figure>
+<p>A将移动到c路径下</p>
+<h3 id="kill-杀死进程"><a href="#kill-杀死进程" class="headerlink" title="kill 杀死进程"></a>kill 杀死进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">kill</span> -9 进程id</span><br></pre></td></tr></table></figure>
+<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure>
+<p>查看uwsgi的进程</p>
+<h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
+]]></content>
       
         <categories>
             
@@ -90,6 +97,32 @@
     </entry>
     
     <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><ul>
+<li>男儿本色  </li>
+<li>大话西游（我女神朱茵） </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -120,32 +153,6 @@ $ brew list (已经不存在 mongodb)
         <tags>
             
             <tag> mac </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><ul>
-<li>男儿本色  </li>
-<li>大话西游（我女神朱茵） </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
             
         </tags>
         
