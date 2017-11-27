@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
+    <lastmod>2017-11-27T14:56:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>mac 安装MongoDB</title>
+        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+        <tag>MongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</loc>
+    <lastmod>2017-11-27T14:56:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>ubuntu 安装MongoDB</title>
+        <pubTime>2017-11-26T16:00:00.000Z</pubTime>
+        
+        <tag>MongoDB</tag>
+         
+        <tag>ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2017-11-27T14:48:10.000Z</lastmod>
     <data>
@@ -41,26 +85,6 @@
 
     
   <url>
-    <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
-    <lastmod>2017-11-27T14:48:04.000Z</lastmod>
-    <data>
-        <display>
-        <title>mac 安装MongoDB</title>
-        <pubTime>2017-11-22T16:00:00.000Z</pubTime>
-        
-        <tag>mac, MongoDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2017-11-27T14:48:02.000Z</lastmod>
     <data>
@@ -89,26 +113,6 @@
         <pubTime>2017-11-22T16:00:00.000Z</pubTime>
         
         <tag>windows</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</loc>
-    <lastmod>2017-11-27T14:46:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>ubuntu 安装MongoDB</title>
-        <pubTime>2017-11-26T16:00:00.000Z</pubTime>
-        
-        <tag>ubuntu, MongoDB</tag>
          
          
            
