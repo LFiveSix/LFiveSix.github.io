@@ -211,6 +211,33 @@
     </entry>
     
     <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -243,33 +270,6 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
             
         </tags>
         
