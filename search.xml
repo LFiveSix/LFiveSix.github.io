@@ -35,47 +35,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MongoDB的基本使用]]></title>
-      <url>/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>记录下mongodb的基本使用方法，积累记录！</p>
-<a id="more"></a>
-<h2 id="mongodb的基本使用方法"><a href="#mongodb的基本使用方法" class="headerlink" title="mongodb的基本使用方法"></a>mongodb的基本使用方法</h2><h3 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
-<h3 id="输入mongo进入shell命令行"><a href="#输入mongo进入shell命令行" class="headerlink" title="输入mongo进入shell命令行"></a>输入mongo进入shell命令行</h3><h3 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show dbs</span><br></pre></td></tr></table></figure>
-<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ use ****</span><br></pre></td></tr></table></figure>
-<h3 id="查看该数据库下的集合"><a href="#查看该数据库下的集合" class="headerlink" title="查看该数据库下的集合"></a>查看该数据库下的集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show collections</span><br></pre></td></tr></table></figure>
-<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.createCollection(<span class="string">"***"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.insert(&#123;<span class="string">"1"</span>: <span class="string">"2"</span>&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注：如果没有该集合会自动创建集合</li>
-</ul>
-<h3 id="查询文档"><a href="#查询文档" class="headerlink" title="查询文档"></a>查询文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find()db</span><br></pre></td></tr></table></figure>
-<h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.remove(&#123;文档内容&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 切换到该数据库下，输入db.dropDatabase()</span><br></pre></td></tr></table></figure>
-<h3 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.drop()</span><br></pre></td></tr></table></figure>
-<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><pre><code class="bash">$ mongoimport --db 数据库名 --collection 集合名 --drop --file /home/lzw/PycharmProjects/restaurants.json（数据路径
-)
-</code></pre>
-<ul>
-<li>注：原集合存在会删除原有集合</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MongoDB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[ubuntu 安装MongoDB]]></title>
       <url>/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</url>
       <content type="html"><![CDATA[<p>ubuntu (16.04)下使用mongodb</p>
@@ -109,6 +68,50 @@
             <tag> MongoDB </tag>
             
             <tag> ubuntu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MongoDB的基本使用]]></title>
+      <url>/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>记录下mongodb的基本使用方法，积累记录！</p>
+<a id="more"></a>
+<h2 id="mongodb的基本使用方法"><a href="#mongodb的基本使用方法" class="headerlink" title="mongodb的基本使用方法"></a>mongodb的基本使用方法</h2><h3 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
+<h3 id="输入mongo进入shell命令行"><a href="#输入mongo进入shell命令行" class="headerlink" title="输入mongo进入shell命令行"></a>输入mongo进入shell命令行</h3><h3 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show dbs</span><br></pre></td></tr></table></figure>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ use ****</span><br></pre></td></tr></table></figure>
+<h3 id="查看该数据库下的集合"><a href="#查看该数据库下的集合" class="headerlink" title="查看该数据库下的集合"></a>查看该数据库下的集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show collections</span><br></pre></td></tr></table></figure>
+<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.createCollection(<span class="string">"***"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.insert(&#123;<span class="string">"1"</span>: <span class="string">"2"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：如果没有该集合会自动创建集合</li>
+</ul>
+<h2 id="删-除"><a href="#删-除" class="headerlink" title="删 除"></a>删 除</h2><h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.remove(&#123;文档内容&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 切换到该数据库下，输入db.dropDatabase()</span><br></pre></td></tr></table></figure>
+<h3 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.drop()</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="查询集合"><a href="#查询集合" class="headerlink" title="查询集合"></a>查询集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find()</span><br></pre></td></tr></table></figure>
+<h3 id="查询前N项数据"><a href="#查询前N项数据" class="headerlink" title="查询前N项数据"></a>查询前N项数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
+<h3 id="从第n项开始查询"><a href="#从第n项开始查询" class="headerlink" title="从第n项开始查询"></a>从第n项开始查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().skip(N)</span><br></pre></td></tr></table></figure>
+<h3 id="统计集合中数据数量"><a href="#统计集合中数据数量" class="headerlink" title="统计集合中数据数量"></a>统计集合中数据数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.count()</span><br></pre></td></tr></table></figure>
+<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><pre><code class="bash">$ mongoimport --db 数据库名 --collection 集合名 --drop --file /home/lzw/PycharmProjects/restaurants.json（数据路径
+)
+</code></pre>
+<ul>
+<li>注：原集合存在会删除原有集合</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MongoDB </tag>
             
         </tags>
         
@@ -175,42 +178,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/books/</url>
-      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
-<a id="more"></a>
-<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><p>2017</p>
-<ul>
-<li>python web 开发实战  </li>
-<li>python 核心编程（第三版） </li>
-<li>代码大全（第二版）</li>
-</ul>
-<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><p>2017</p>
-<ul>
-<li>人性的弱点  </li>
-<li>失控  </li>
-<li>博弈心理学  </li>
-<li>人性的优点  </li>
-<li>人类简史  </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 读书清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> books </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[观影史]]></title>
       <url>/movies/</url>
       <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
@@ -270,6 +237,42 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书清单]]></title>
+      <url>/books/</url>
+      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
+<a id="more"></a>
+<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><p>2017</p>
+<ul>
+<li>python web 开发实战  </li>
+<li>python 核心编程（第三版） </li>
+<li>代码大全（第二版）</li>
+</ul>
+<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><p>2017</p>
+<ul>
+<li>人性的弱点  </li>
+<li>失控  </li>
+<li>博弈心理学  </li>
+<li>人性的优点  </li>
+<li>人类简史  </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 读书清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> books </tag>
             
         </tags>
         
