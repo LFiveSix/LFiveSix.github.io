@@ -94,7 +94,12 @@
 <h3 id="查询前N项数据"><a href="#查询前N项数据" class="headerlink" title="查询前N项数据"></a>查询前N项数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
 <h3 id="从第n项开始查询"><a href="#从第n项开始查询" class="headerlink" title="从第n项开始查询"></a>从第n项开始查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().skip(N)</span><br></pre></td></tr></table></figure>
 <h3 id="统计集合中数据数量"><a href="#统计集合中数据数量" class="headerlink" title="统计集合中数据数量"></a>统计集合中数据数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.count()</span><br></pre></td></tr></table></figure>
-<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db 数据库名 --collection 集合名 --drop --file /home/lzw/PycharmProjects/restaurants.json（数据路径</span><br><span class="line">)</span><br><span class="line">``` </span><br><span class="line">- 注：原集合存在会删除原有集合</span><br><span class="line"></span><br><span class="line"><span class="comment">### 导出数据，数据格式为data.json </span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">$ mongoexport -d db -c collection -o /路径/文件名</span><br><span class="line">``` </span><br><span class="line">- eg: </span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">$ mongoexport -d lianjia -c zufang_location -o /Users/lzw/li.josn</span><br></pre></td></tr></table></figure>
+<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><pre><code class="bash">$ mongoimport --db 数据库名 --collection 集合名 --drop --file /home/lzw/PycharmProjects/restaurants.json（数据路径
+)
+</code></pre>
+<ul>
+<li>注：原集合存在会删除原有集合</li>
+</ul>
 ]]></content>
       
         <categories>
@@ -199,33 +204,6 @@ dir
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -255,9 +233,9 @@ $ brew list (已经不存在 mongodb)
         
         <tags>
             
-            <tag> MongoDB </tag>
-            
             <tag> mac </tag>
+            
+            <tag> MongoDB </tag>
             
         </tags>
         
@@ -294,6 +272,33 @@ $ brew list (已经不存在 mongodb)
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
