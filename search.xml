@@ -8,7 +8,6 @@
       <content type="html"><![CDATA[<p>工欲善其事，必先利其器。将pycharm的一些常用技巧记录下来！</p>
 <a id="more"></a>
 <h2 id="查看调用库的源代码"><a href="#查看调用库的源代码" class="headerlink" title="查看调用库的源代码"></a>查看调用库的源代码</h2><h3 id="查看调用库源码的类、方法、函数、变量"><a href="#查看调用库源码的类、方法、函数、变量" class="headerlink" title="查看调用库源码的类、方法、函数、变量"></a>查看调用库源码的类、方法、函数、变量</h3><p>调用库时，你可以在你好奇的几乎任何地方点击 Command+B，就可以很方便的跳转到源码里的类，方法，函数，变量的定义。 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 切记，复制文件夹要加-r</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ Command+B</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">##  一键上传代码至github</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 配置pycharm </span></span><br><span class="line">Pycharm =&gt; Preferences =&gt; Version Contorl =&gt; github  </span><br><span class="line">过程如图所示：  </span><br><span class="line">![](http://ongsui5u0.bkt.clouddn.com/WechatIMG159.jpeg)  </span><br><span class="line">![](http://ongsui5u0.bkt.clouddn.com/WechatIMG162.jpeg)  </span><br><span class="line"></span><br><span class="line"><span class="comment">### 验证git  </span></span><br><span class="line">验证过程如图所示  </span><br><span class="line">![](http://ongsui5u0.bkt.clouddn.com/WechatIMG163.jpeg)</span><br><span class="line"></span><br><span class="line"><span class="comment">### 上传至github  </span></span><br><span class="line">过程如下：  </span><br><span class="line">![](http://ongsui5u0.bkt.clouddn.com/WechatIMG165.jpeg)  </span><br><span class="line">![](http://ongsui5u0.bkt.clouddn.com/WechatIMG164.jpeg)</span><br><span class="line"></span><br><span class="line"><span class="comment">### 添加__author__ = 'HuaHua'作者信息  </span></span><br><span class="line">如下图所示在设置中添加：  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ __author__ = <span class="string">'$USER'</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG160.jpeg" alt="">  </p>
 ]]></content>
@@ -238,35 +237,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -299,6 +269,35 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
