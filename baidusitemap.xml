@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/use%20pycharm/</loc>
+    <lastmod>2017-12-07T06:48:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>pycharm的使用技巧</title>
+        <pubTime>2017-12-07T06:09:14.000Z</pubTime>
+        
+        <tag>pycharm</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/books/</loc>
     <lastmod>2017-12-06T02:14:49.000Z</lastmod>
     <data>
@@ -91,9 +108,9 @@
         <title>mac 安装MongoDB</title>
         <pubTime>2017-11-22T16:00:00.000Z</pubTime>
         
-        <tag>MongoDB</tag>
-         
         <tag>mac</tag>
+         
+        <tag>MongoDB</tag>
          
          
            
