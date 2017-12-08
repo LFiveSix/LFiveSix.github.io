@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/books/</loc>
+    
+    <lastmod>2017-12-08T02:40:52.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/movies/</loc>
+    
+    <lastmod>2017-12-08T02:40:40.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/about/index.html</loc>
+    
+    <lastmod>2017-12-08T02:40:20.425Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
     
     <lastmod>2017-12-07T08:55:03.000Z</lastmod>
@@ -12,20 +33,6 @@
     <loc>http://www.LFiveSix.com/use%20pycharm/</loc>
     
     <lastmod>2017-12-07T07:38:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/books/</loc>
-    
-    <lastmod>2017-12-06T02:14:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/movies/</loc>
-    
-    <lastmod>2017-12-06T02:12:56.000Z</lastmod>
     
   </url>
   
@@ -89,13 +96,6 @@
     <loc>http://www.LFiveSix.com/visit/</loc>
     
     <lastmod>2017-11-24T07:49:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/about/index.html</loc>
-    
-    <lastmod>2017-11-24T06:41:31.000Z</lastmod>
     
   </url>
   

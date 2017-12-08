@@ -212,73 +212,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[读书清单]]></title>
-      <url>/books/</url>
-      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
-<a id="more"></a>
-<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><p>2017</p>
-<ul>
-<li>python web 开发实战  </li>
-<li>python 核心编程（第三版） </li>
-<li>代码大全（第二版）</li>
-</ul>
-<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><p>2017</p>
-<ul>
-<li>人性的弱点  </li>
-<li>失控  </li>
-<li>博弈心理学  </li>
-<li>人性的优点  </li>
-<li>人类简史  </li>
-<li>前世今生（11.28-）</li>
-<li>穷爸爸富爸爸全集(11.23-)</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 读书清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> books </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -611,6 +544,73 @@ $ git push
         <tags>
             
             <tag> mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书清单]]></title>
+      <url>/books/</url>
+      <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
+<a id="more"></a>
+<h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><p>2017</p>
+<ul>
+<li>python web 开发实战  </li>
+<li>python 核心编程（第三版） </li>
+<li>代码大全（第二版）</li>
+</ul>
+<h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><p>2017</p>
+<ul>
+<li>人性的弱点  </li>
+<li>失控  </li>
+<li>博弈心理学  </li>
+<li>人性的优点  </li>
+<li>人类简史  </li>
+<li>前世今生（11.28-）</li>
+<li>穷爸爸富爸爸全集(11.23-)</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 读书清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> books </tag>
             
         </tags>
         
