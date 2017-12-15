@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    <lastmod>2017-12-15T09:25:16.669Z</lastmod>
+    <lastmod>2017-12-15T09:26:46.049Z</lastmod>
     <data>
         <display>
         <title>Flask + Nginx + uwsgi</title>
@@ -166,9 +166,9 @@
         <title>mac 安装MongoDB</title>
         <pubTime>2017-11-22T16:00:00.000Z</pubTime>
         
-        <tag>MongoDB</tag>
-         
         <tag>mac</tag>
+         
+        <tag>MongoDB</tag>
          
          
            
