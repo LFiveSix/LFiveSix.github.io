@@ -17,15 +17,18 @@
 
 
 
-<meta name="keywords" content="python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
+<meta name="description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
+<meta name="keywords" content="bitbucket">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LFiveSix&#39;s Blog">
+<meta property="og:title" content="Flask + Nginx + Uwsgi">
 <meta property="og:url" content="http://www.LFiveSix.com/uwsgi nginx flask/index.html">
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
+<meta property="og:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T08:55:03.000Z">
+<meta property="og:updated_time" content="2017-12-15T08:40:54.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LFiveSix&#39;s Blog">
+<meta name="twitter:title" content="Flask + Nginx + Uwsgi">
+<meta name="twitter:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,13 +55,13 @@
 
 
 
-<meta name="keywords" content="python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
+<meta name="keywords" content="bitbucket,python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
 
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>LFiveSix&#39;s Blog</title>
+<title>Flask + Nginx + Uwsgi | LFiveSix&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -231,10 +234,39 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Flask + Nginx + Uwsgi
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/自用笔记/">自用笔记</a><a class="article-category-link" href="/categories/自用笔记/服务器/">服务器</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/">Flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Uwsgi/">Uwsgi</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)</p>
+<a id="more"></a>
+<h2 id="Flask-Nginx-Uwsgi配置服务器"><a href="#Flask-Nginx-Uwsgi配置服务器" class="headerlink" title="Flask+Nginx+Uwsgi配置服务器"></a>Flask+Nginx+Uwsgi配置服务器</h2><h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -242,12 +274,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/uwsgi nginx flask/"></a></p>
+        <p><span>本文标题:</span><a href="/uwsgi nginx flask/">Flask + Nginx + Uwsgi</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-07, 16:55:02</p>
-        <p><span>最后更新:</span>2017-12-07, 16:55:03</p>
+        <p><span>最后更新:</span>2017-12-15, 16:40:54</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/uwsgi nginx flask/" title="">http://www.LFiveSix.com/uwsgi nginx flask/</a>
+            <span>原始链接:</span><a class="post-url" href="/uwsgi nginx flask/" title="Flask + Nginx + Uwsgi">http://www.LFiveSix.com/uwsgi nginx flask/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/uwsgi nginx flask/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -281,7 +313,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-Nginx-Uwsgi配置服务器"><span class="toc-number">1.</span> <span class="toc-text">Flask+Nginx+Uwsgi配置服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">1.1.</span> <span class="toc-text">升级</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -317,7 +349,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Flask + Nginx + Uwsgi　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -388,7 +420,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">uwsgi nginx flask</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + Uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 

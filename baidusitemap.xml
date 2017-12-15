@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
+    <lastmod>2017-12-15T08:40:54.440Z</lastmod>
+    <data>
+        <display>
+        <title>Flask + Nginx + Uwsgi</title>
+        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
+        
+        <tag>Flask</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>Uwsgi</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="服务器" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/mongodb%20index/</loc>
     <lastmod>2017-12-08T09:16:05.528Z</lastmod>
     <data>
@@ -73,21 +100,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    <lastmod>2017-12-07T08:55:03.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.LFiveSix.com/use%20pycharm/</loc>

@@ -11,10 +11,31 @@
     </entry>
     
     <entry>
-      <title></title>
+      <title><![CDATA[Flask + Nginx + Uwsgi]]></title>
       <url>/uwsgi%20nginx%20flask/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)</p>
+<a id="more"></a>
+<h2 id="Flask-Nginx-Uwsgi配置服务器"><a href="#Flask-Nginx-Uwsgi配置服务器" class="headerlink" title="Flask+Nginx+Uwsgi配置服务器"></a>Flask+Nginx+Uwsgi配置服务器</h2><h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
+]]></content>
       
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+            <category> 服务器 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Flask </tag>
+            
+            <tag> Nginx </tag>
+            
+            <tag> Uwsgi </tag>
+            
+        </tags>
         
     </entry>
     
@@ -75,45 +96,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[ubuntu 安装MongoDB]]></title>
-      <url>/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</url>
-      <content type="html"><![CDATA[<p>ubuntu (16.04)下使用mongodb</p>
-<a id="more"></a>
-<h2 id="ubuntu-安装MongoDB"><a href="#ubuntu-安装MongoDB" class="headerlink" title="ubuntu 安装MongoDB"></a>ubuntu 安装MongoDB</h2><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><p>可以根据官网提供的方法进行安装<br><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#install-mongodb-community-edition" target="_blank" rel="noopener">官网入口</a></p>
-<h3 id="导入MongoDB-public-GPG-Key"><a href="#导入MongoDB-public-GPG-Key" class="headerlink" title="导入MongoDB public GPG Key"></a>导入MongoDB public GPG Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</span><br></pre></td></tr></table></figure>
-<h3 id="为mongodb创建一个列表文件"><a href="#为mongodb创建一个列表文件" class="headerlink" title="为mongodb创建一个列表文件"></a>为mongodb创建一个列表文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</span><br></pre></td></tr></table></figure>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h3 id="安装mongodb-1"><a href="#安装mongodb-1" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install -y mongodb-org</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注：mongodb的配置文件所在目录为/etc/mongodb.conf</li>
-</ul>
-<h3 id="启动mongodb"><a href="#启动mongodb" class="headerlink" title="启动mongodb"></a>启动mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
-<h3 id="查看mongodb的守护进程"><a href="#查看mongodb的守护进程" class="headerlink" title="查看mongodb的守护进程"></a>查看mongodb的守护进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep mongodt</span><br></pre></td></tr></table></figure>
-<h3 id="关闭mongodb"><a href="#关闭mongodb" class="headerlink" title="关闭mongodb"></a>关闭mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod stop</span><br></pre></td></tr></table></figure>
-<h2 id="卸载mongodb"><a href="#卸载mongodb" class="headerlink" title="卸载mongodb"></a>卸载mongodb</h2><h3 id="关闭mongodb-1"><a href="#关闭mongodb-1" class="headerlink" title="关闭mongodb"></a>关闭mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod stop</span><br></pre></td></tr></table></figure>
-<h3 id="卸载所有安装包"><a href="#卸载所有安装包" class="headerlink" title="卸载所有安装包"></a>卸载所有安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get purge mongodb-org*</span><br></pre></td></tr></table></figure>
-<h3 id="移除数据库和日志文件（具体看-etc-mongodb-conf配置文件）"><a href="#移除数据库和日志文件（具体看-etc-mongodb-conf配置文件）" class="headerlink" title="移除数据库和日志文件（具体看/etc/mongodb.conf配置文件）"></a>移除数据库和日志文件（具体看/etc/mongodb.conf配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm -r /var/<span class="built_in">log</span>/mongodb</span><br><span class="line">$ sudo rm -r /var/lib/mongodb</span><br></pre></td></tr></table></figure>
-<h3 id="etc-mongodb-conf配置文件如下（部分数据）："><a href="#etc-mongodb-conf配置文件如下（部分数据）：" class="headerlink" title="./etc/mongodb.conf配置文件如下（部分数据）："></a>./etc/mongodb.conf配置文件如下（部分数据）：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mongodb.conf</span></span><br><span class="line">sudo apt-get purge mongodb-org*</span><br><span class="line"></span><br><span class="line"><span class="comment"># Where to store the data.</span></span><br><span class="line">dbpath=/var/lib/mongodb   //数据库路径</span><br><span class="line"></span><br><span class="line"><span class="comment">#where to log</span></span><br><span class="line">logpath=/var/<span class="built_in">log</span>/mongodb/mongodb.log  日志路径</span><br><span class="line"></span><br><span class="line">logappend=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">bind_ip = 127.0.0.1</span><br><span class="line"><span class="comment">#port = 27017</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable journaling, http://www.mongodb.org/display/DOCS/Journaling</span></span><br><span class="line">journal=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enables periodic logging of CPU utilization and I/O wait</span></span><br><span class="line"><span class="comment">#cpu = true</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MongoDB </tag>
-            
-            <tag> ubuntu </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[MongoDB的基本使用]]></title>
       <url>/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>记录下mongodb的基本使用方法，积累记录！</p>
@@ -154,6 +136,45 @@
         <tags>
             
             <tag> MongoDB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ubuntu 安装MongoDB]]></title>
+      <url>/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</url>
+      <content type="html"><![CDATA[<p>ubuntu (16.04)下使用mongodb</p>
+<a id="more"></a>
+<h2 id="ubuntu-安装MongoDB"><a href="#ubuntu-安装MongoDB" class="headerlink" title="ubuntu 安装MongoDB"></a>ubuntu 安装MongoDB</h2><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><p>可以根据官网提供的方法进行安装<br><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#install-mongodb-community-edition" target="_blank" rel="noopener">官网入口</a></p>
+<h3 id="导入MongoDB-public-GPG-Key"><a href="#导入MongoDB-public-GPG-Key" class="headerlink" title="导入MongoDB public GPG Key"></a>导入MongoDB public GPG Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</span><br></pre></td></tr></table></figure>
+<h3 id="为mongodb创建一个列表文件"><a href="#为mongodb创建一个列表文件" class="headerlink" title="为mongodb创建一个列表文件"></a>为mongodb创建一个列表文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</span><br></pre></td></tr></table></figure>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h3 id="安装mongodb-1"><a href="#安装mongodb-1" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install -y mongodb-org</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：mongodb的配置文件所在目录为/etc/mongodb.conf</li>
+</ul>
+<h3 id="启动mongodb"><a href="#启动mongodb" class="headerlink" title="启动mongodb"></a>启动mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
+<h3 id="查看mongodb的守护进程"><a href="#查看mongodb的守护进程" class="headerlink" title="查看mongodb的守护进程"></a>查看mongodb的守护进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep mongodt</span><br></pre></td></tr></table></figure>
+<h3 id="关闭mongodb"><a href="#关闭mongodb" class="headerlink" title="关闭mongodb"></a>关闭mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod stop</span><br></pre></td></tr></table></figure>
+<h2 id="卸载mongodb"><a href="#卸载mongodb" class="headerlink" title="卸载mongodb"></a>卸载mongodb</h2><h3 id="关闭mongodb-1"><a href="#关闭mongodb-1" class="headerlink" title="关闭mongodb"></a>关闭mongodb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod stop</span><br></pre></td></tr></table></figure>
+<h3 id="卸载所有安装包"><a href="#卸载所有安装包" class="headerlink" title="卸载所有安装包"></a>卸载所有安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get purge mongodb-org*</span><br></pre></td></tr></table></figure>
+<h3 id="移除数据库和日志文件（具体看-etc-mongodb-conf配置文件）"><a href="#移除数据库和日志文件（具体看-etc-mongodb-conf配置文件）" class="headerlink" title="移除数据库和日志文件（具体看/etc/mongodb.conf配置文件）"></a>移除数据库和日志文件（具体看/etc/mongodb.conf配置文件）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm -r /var/<span class="built_in">log</span>/mongodb</span><br><span class="line">$ sudo rm -r /var/lib/mongodb</span><br></pre></td></tr></table></figure>
+<h3 id="etc-mongodb-conf配置文件如下（部分数据）："><a href="#etc-mongodb-conf配置文件如下（部分数据）：" class="headerlink" title="./etc/mongodb.conf配置文件如下（部分数据）："></a>./etc/mongodb.conf配置文件如下（部分数据）：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mongodb.conf</span></span><br><span class="line">sudo apt-get purge mongodb-org*</span><br><span class="line"></span><br><span class="line"><span class="comment"># Where to store the data.</span></span><br><span class="line">dbpath=/var/lib/mongodb   //数据库路径</span><br><span class="line"></span><br><span class="line"><span class="comment">#where to log</span></span><br><span class="line">logpath=/var/<span class="built_in">log</span>/mongodb/mongodb.log  日志路径</span><br><span class="line"></span><br><span class="line">logappend=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">bind_ip = 127.0.0.1</span><br><span class="line"><span class="comment">#port = 27017</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable journaling, http://www.mongodb.org/display/DOCS/Journaling</span></span><br><span class="line">journal=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enables periodic logging of CPU utilization and I/O wait</span></span><br><span class="line"><span class="comment">#cpu = true</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MongoDB </tag>
+            
+            <tag> ubuntu </tag>
             
         </tags>
         
@@ -560,35 +581,6 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -621,6 +613,35 @@ $ git push
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
