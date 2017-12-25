@@ -26,7 +26,7 @@
 <meta property="og:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.lfivesix.com/uwsgi%20nginx%20flask/index.html#">
-<meta property="og:updated_time" content="2017-12-25T07:20:13.573Z">
+<meta property="og:updated_time" content="2017-12-25T07:36:36.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask + Nginx + uwsgi">
 <meta name="twitter:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
@@ -305,8 +305,55 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ [program:firstflask]</span><br><span class="line">	<span class="built_in">command</span>=uwsgi --ini /www/firstflask/myuwsgi.ini</span><br><span class="line">	directory=/www/firstflask</span><br></pre></td></tr></table></figure>
 <ul>
 <li>其他参数：</li>
-<li></li>
+<li>autorestart = true</li>
+<li>user = root</li>
+<li>autostart = true<br>注释：  </li>
+<li>分别保存标准输出和标准错误日志，如果 uwsgi 启动出错，可以去日志里面找原因</li>
+<li>运行日志：</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ stdout_logfile=/var/<span class="built_in">log</span>/uwsgi/supervisor_chihu.log</span><br></pre></td></tr></table></figure>
+<ul>
+<li>错误日志：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ stderr_logfile=/var/<span class="built_in">log</span>/uwsgi/supervisor_chihu_err.log</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数含义：</li>
+<li>[program:firstflask] firstflask为项目名称。eg：我的项目/www/firstflask/li.py</li>
+<li>command uwsgi的启动命令 写的绝对路径</li>
+<li>directory 项目路径</li>
+<li>user = root root 用户启动</li>
+<li>autostart = true     ; 在 supervisord 启动的时候也自动启动</li>
+<li>autorestart = true   ; 程序异常退出后自动重启<br>第一次用supervisor还有写配置不太清楚，现在这个配置可以支持项目跑起来了</li>
+</ul>
+<h3 id="关于supervisord的一些命令"><a href="#关于supervisord的一些命令" class="headerlink" title="关于supervisord的一些命令"></a>关于supervisord的一些命令</h3><p>启动supervisord：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl reload</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在/etc/supervisor目录下执行，记得将python切换成Python2</li>
+</ul>
+<p>停止Supervisor(子进程也会被停止)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl shutdown</span><br></pre></td></tr></table></figure>
+<p>检查uwsgi进程是否正常运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux|grep uwsgi</span><br></pre></td></tr></table></figure>
+<p>查看Supervisor是否已经启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef | grep supervisor</span><br></pre></td></tr></table></figure>
+<p>查看业务进程是否已经被拉起：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl status</span><br></pre></td></tr></table></figure>
+<p>查询各进程运行状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl status</span><br></pre></td></tr></table></figure>
+<p>启、停、重启业务进程,check12306为进程名,即[program:check12306]里配置的值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl start check12306</span><br><span class="line">  supervisorctl stop check12306</span><br><span class="line">  supervisorctl restart check12306</span><br></pre></td></tr></table></figure>
+<p>重启所有属于名为groupworker这个分组的进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl start groupworker</span><br><span class="line">  supervisorctl stop groupworker</span><br><span class="line">  supervisorctl restart groupworker</span><br></pre></td></tr></table></figure>
+<p>启、停、重启全部进程(不会载入最新的配置文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl start all</span><br><span class="line">  supervisorctl stop all</span><br><span class="line">  supervisorctl restart all</span><br></pre></td></tr></table></figure>
+<p>重新加载配置文件.停止原有进程并按新的配置启动所有进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl reload</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在/etc/supervisor目录下执行，记得将python切换成Python2</li>
+</ul>
+<p>根据最新的配置文件,启动新配置或有改动的进程,配置没有改动的进程不会受影响而重启。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl update</span><br></pre></td></tr></table></figure>
+<p>注意:显示用stop停止掉的进程，用reload或者update都不会自动重启</p>
 
       
     </div>
@@ -318,7 +365,7 @@
         <p><span>本文标题:</span><a href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-07, 16:55:02</p>
-        <p><span>最后更新:</span>2017-12-25, 15:20:13</p>
+        <p><span>最后更新:</span>2017-12-25, 15:36:36</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/uwsgi nginx flask/" title="Flask + Nginx + uwsgi">http://www.LFiveSix.com/uwsgi nginx flask/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/uwsgi nginx flask/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -354,7 +401,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-Nginx-Uwsgi配置服务器"><span class="toc-number">1.</span> <span class="toc-text">Flask+Nginx+Uwsgi配置服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">1.1.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pip"><span class="toc-number">1.2.</span> <span class="toc-text">安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级pip"><span class="toc-number">1.3.</span> <span class="toc-text">升级pip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装uWSGI"><span class="toc-number">2.</span> <span class="toc-text">安装uWSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Nginx"><span class="toc-number">3.</span> <span class="toc-text">安装Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx的启动命令"><span class="toc-number">3.1.</span> <span class="toc-text">nginx的启动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx重新启动"><span class="toc-number">3.2.</span> <span class="toc-text">nginx重新启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx"><span class="toc-number">4.</span> <span class="toc-text">配置Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置信息"><span class="toc-number">4.1.</span> <span class="toc-text">配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-uwsgi"><span class="toc-number">4.2.</span> <span class="toc-text">配置 uwsgi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程监控"><span class="toc-number">4.3.</span> <span class="toc-text">进程监控</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-Nginx-Uwsgi配置服务器"><span class="toc-number">1.</span> <span class="toc-text">Flask+Nginx+Uwsgi配置服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">1.1.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pip"><span class="toc-number">1.2.</span> <span class="toc-text">安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级pip"><span class="toc-number">1.3.</span> <span class="toc-text">升级pip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装uWSGI"><span class="toc-number">2.</span> <span class="toc-text">安装uWSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Nginx"><span class="toc-number">3.</span> <span class="toc-text">安装Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx的启动命令"><span class="toc-number">3.1.</span> <span class="toc-text">nginx的启动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx重新启动"><span class="toc-number">3.2.</span> <span class="toc-text">nginx重新启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx"><span class="toc-number">4.</span> <span class="toc-text">配置Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置信息"><span class="toc-number">4.1.</span> <span class="toc-text">配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-uwsgi"><span class="toc-number">4.2.</span> <span class="toc-text">配置 uwsgi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程监控"><span class="toc-number">4.3.</span> <span class="toc-text">进程监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于supervisord的一些命令"><span class="toc-number">4.4.</span> <span class="toc-text">关于supervisord的一些命令</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -461,7 +508,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
