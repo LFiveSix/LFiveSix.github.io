@@ -17,15 +17,18 @@
 
 
 
-<meta name="keywords" content="python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
+<meta name="description" content="简单记录mongodb地理位置索引，mongodb地理位置索引分两种：2d索引、2dsphere索引">
+<meta name="keywords" content="mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LFiveSix&#39;s Blog">
+<meta property="og:title" content="mongodb地理位置索引">
 <meta property="og:url" content="http://www.LFiveSix.com/mongodb index/index.html">
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
+<meta property="og:description" content="简单记录mongodb地理位置索引，mongodb地理位置索引分两种：2d索引、2dsphere索引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-08T09:16:05.528Z">
+<meta property="og:updated_time" content="2017-12-25T09:24:25.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LFiveSix&#39;s Blog">
+<meta name="twitter:title" content="mongodb地理位置索引">
+<meta name="twitter:description" content="简单记录mongodb地理位置索引，mongodb地理位置索引分两种：2d索引、2dsphere索引">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,13 +55,13 @@
 
 
 
-<meta name="keywords" content="python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
+<meta name="keywords" content="mongodb,python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
 
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>LFiveSix&#39;s Blog</title>
+<title>mongodb地理位置索引 | LFiveSix&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -231,10 +234,90 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mongodb地理位置索引
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/自用笔记/">自用笔记</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>简单记录mongodb地理位置索引，mongodb地理位置索引分两种：2d索引、2dsphere索引</p>
+<a id="more"></a>
+<p>mongodb地理位置索引分两种：</p>
+<ul>
+<li>2d索引（存储查找平面上的点，2d索引同时支持平面和球面几何）</li>
+<li>2dsphere索引（存储查找球面上的点， 2dsphere 索引只能支持球面几何，在 2dsphere索引上使用球面几何的查询将会更高效和准确）</li>
+</ul>
+<h2 id="2d索引"><a href="#2d索引" class="headerlink" title="2d索引"></a>2d索引</h2><ul>
+<li>插入数据：在集合d中插入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.insert(&#123;name:<span class="string">"北京"</span>,location:[90,70]&#125;)...</span><br></pre></td></tr></table></figure>
+<p>location 是一个数组，包含两个值，经度[-180,180]和纬度[-90,90]</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.ensureIndex(&#123;<span class="string">"location"</span>:<span class="string">"2d"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>location与插入数据时候的location一致</li>
+</ul>
+<h3 id="查询，-查询有三种near-geoWithin-geoNear-near"><a href="#查询，-查询有三种near-geoWithin-geoNear-near" class="headerlink" title="查询， 查询有三种near,geoWithin,geoNear near"></a>查询， 查询有三种near,geoWithin,geoNear near</h3><h3 id="near"><a href="#near" class="headerlink" title="near"></a>near</h3><ul>
+<li>返回的是由近及远的100条数据</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123;location:&#123;<span class="variable">$near</span>:[90,70]&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>limit(n)n限制返回的条数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123;location:&#123;<span class="variable">$near</span>:[90,70]&#125;).<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
+<h3 id="根据距离来返回地点-maxDistance"><a href="#根据距离来返回地点-maxDistance" class="headerlink" title="根据距离来返回地点$maxDistance"></a>根据距离来返回地点$maxDistance</h3><ul>
+<li>$maxDistance官网解释地址: <a href="https://docs.mongodb.com/manual/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/</a></li>
+<li>返回1400km以内的点</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123; location: &#123;<span class="variable">$near</span>: [116.23,39.54],<span class="variable">$maxDistance</span>:1400/111.12 &#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="geoWithin查询"><a href="#geoWithin查询" class="headerlink" title="geoWithin查询"></a>geoWithin查询</h3><p>该查询方式用于查询某个形状内的点，形状主要有矩形、圆形、多边形三种，分别表示如下:</p>
+<ul>
+<li>矩形，box的两个值分别代表矩形左上角与右下角的坐标</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$box</span>:[[0,0],[3,3]]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>圆形，center的两个值分别代表圆心的坐标与半径</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$center</span>:[[0,0],r]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>矩形，polygon的值代表多边形各个顶点的坐标</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$polygon</span>:[[0,0],[3,3],[4,4],……]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="geoNear查询-geoNear查询使用runCommand命令进行使用"><a href="#geoNear查询-geoNear查询使用runCommand命令进行使用" class="headerlink" title="geoNear查询,geoNear查询使用runCommand命令进行使用"></a>geoNear查询,geoNear查询使用runCommand命令进行使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ db.runCommand(&#123;</span><br><span class="line">    geoNear:集合名字符串,</span><br><span class="line">    near:坐标数组,</span><br><span class="line">    minDistance:最小距离,可选</span><br><span class="line">    maxDistance:最多距离,可选</span><br><span class="line">    num:限制返回结果的数目</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.runCommand(&#123;<span class="string">"geoNear"</span>:<span class="string">"d"</span>,<span class="string">"near"</span>:[116.23,39.54]&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回的结果如下:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$ &#123;</span><br><span class="line">	<span class="string">"results"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"dis"</span> : 0,</span><br><span class="line">			<span class="string">"obj"</span> : &#123;</span><br><span class="line">				<span class="string">"_id"</span> : ObjectId(<span class="string">"59f2beb0476ef85f73f31d61"</span>),</span><br><span class="line">				<span class="string">"name"</span> : <span class="string">"北京"</span>,</span><br><span class="line">				<span class="string">"location"</span> : [</span><br><span class="line">					116.23,</span><br><span class="line">					39.54</span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"dis"</span> : 11.771325328950857,</span><br><span class="line">			<span class="string">"obj"</span> : &#123;</span><br><span class="line">				<span class="string">"_id"</span> : ObjectId(<span class="string">"59f2be99476ef85f73f31d60"</span>),</span><br><span class="line">				<span class="string">"name"</span> : <span class="string">"中央大街"</span>,</span><br><span class="line">				<span class="string">"location"</span> : [</span><br><span class="line">					126.23,</span><br><span class="line">					45.75</span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"stats"</span> : &#123;</span><br><span class="line">		<span class="string">"nscanned"</span> : 45,</span><br><span class="line">		<span class="string">"objectsLoaded"</span> : 2,</span><br><span class="line">		<span class="string">"avgDistance"</span> : 5.885662664475428,</span><br><span class="line">		<span class="string">"maxDistance"</span> : 11.771325328950857,</span><br><span class="line">		<span class="string">"time"</span> : 1</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"ok"</span> : 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：2d只适合两点间距离不是很远的情况下，距离近经纬网可以看成平面直角坐标系，距离大了以后随着地球曲率的影响，这样的计算就不准确了，就应该使用2dsphere</li>
+</ul>
+
       
     </div>
     
@@ -242,12 +325,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/mongodb index/"></a></p>
+        <p><span>本文标题:</span><a href="/mongodb index/">mongodb地理位置索引</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-08, 17:16:04</p>
-        <p><span>最后更新:</span>2017-12-08, 17:16:05</p>
+        <p><span>最后更新:</span>2017-12-25, 17:24:25</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/mongodb index/" title="">http://www.LFiveSix.com/mongodb index/</a>
+            <span>原始链接:</span><a class="post-url" href="/mongodb index/" title="mongodb地理位置索引">http://www.LFiveSix.com/mongodb index/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/mongodb index/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -263,7 +346,7 @@
         
             <div id="article-nav-older" class="article-nav-title">
                 <a href="/uwsgi nginx flask/">
-                    Flask + Nginx + uwsgi
+                    Flask Nginx uwsgi
                 </a>
             </div>
         
@@ -275,7 +358,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2d索引"><span class="toc-number">1.</span> <span class="toc-text">2d索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-number">1.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询，-查询有三种near-geoWithin-geoNear-near"><span class="toc-number">1.2.</span> <span class="toc-text">查询， 查询有三种near,geoWithin,geoNear near</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#near"><span class="toc-number">1.3.</span> <span class="toc-text">near</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根据距离来返回地点-maxDistance"><span class="toc-number">1.4.</span> <span class="toc-text">根据距离来返回地点$maxDistance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#geoWithin查询"><span class="toc-number">1.5.</span> <span class="toc-text">geoWithin查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#geoNear查询-geoNear查询使用runCommand命令进行使用"><span class="toc-number">1.6.</span> <span class="toc-text">geoNear查询,geoNear查询使用runCommand命令进行使用</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -311,7 +394,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"mongodb地理位置索引　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -374,13 +457,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/uwsgi nginx flask/" title="下一篇: Flask + Nginx + uwsgi">
+            <a href="/uwsgi nginx flask/" title="下一篇: Flask Nginx uwsgi">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 

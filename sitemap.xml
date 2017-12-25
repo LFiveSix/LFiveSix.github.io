@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/mongodb%20index/</loc>
+    
+    <lastmod>2017-12-25T09:24:25.238Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
     
-    <lastmod>2017-12-25T08:11:47.755Z</lastmod>
+    <lastmod>2017-12-25T08:27:54.283Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2017-12-18T03:04:09.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/mongodb%20index/</loc>
-    
-    <lastmod>2017-12-08T09:16:05.528Z</lastmod>
     
   </url>
   

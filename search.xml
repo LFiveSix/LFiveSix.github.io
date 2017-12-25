@@ -3,15 +3,81 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[mongodb地理位置索引]]></title>
       <url>/mongodb%20index/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>简单记录mongodb地理位置索引，mongodb地理位置索引分两种：2d索引、2dsphere索引</p>
+<a id="more"></a>
+<p>mongodb地理位置索引分两种：</p>
+<ul>
+<li>2d索引（存储查找平面上的点，2d索引同时支持平面和球面几何）</li>
+<li>2dsphere索引（存储查找球面上的点， 2dsphere 索引只能支持球面几何，在 2dsphere索引上使用球面几何的查询将会更高效和准确）</li>
+</ul>
+<h2 id="2d索引"><a href="#2d索引" class="headerlink" title="2d索引"></a>2d索引</h2><ul>
+<li>插入数据：在集合d中插入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.insert(&#123;name:<span class="string">"北京"</span>,location:[90,70]&#125;)...</span><br></pre></td></tr></table></figure>
+<p>location 是一个数组，包含两个值，经度[-180,180]和纬度[-90,90]</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.ensureIndex(&#123;<span class="string">"location"</span>:<span class="string">"2d"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>location与插入数据时候的location一致</li>
+</ul>
+<h3 id="查询，-查询有三种near-geoWithin-geoNear-near"><a href="#查询，-查询有三种near-geoWithin-geoNear-near" class="headerlink" title="查询， 查询有三种near,geoWithin,geoNear near"></a>查询， 查询有三种near,geoWithin,geoNear near</h3><h3 id="near"><a href="#near" class="headerlink" title="near"></a>near</h3><ul>
+<li>返回的是由近及远的100条数据</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123;location:&#123;<span class="variable">$near</span>:[90,70]&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>limit(n)n限制返回的条数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123;location:&#123;<span class="variable">$near</span>:[90,70]&#125;).<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
+<h3 id="根据距离来返回地点-maxDistance"><a href="#根据距离来返回地点-maxDistance" class="headerlink" title="根据距离来返回地点$maxDistance"></a>根据距离来返回地点$maxDistance</h3><ul>
+<li>$maxDistance官网解释地址: <a href="https://docs.mongodb.com/manual/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/</a></li>
+<li>返回1400km以内的点</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.find(&#123; location: &#123;<span class="variable">$near</span>: [116.23,39.54],<span class="variable">$maxDistance</span>:1400/111.12 &#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="geoWithin查询"><a href="#geoWithin查询" class="headerlink" title="geoWithin查询"></a>geoWithin查询</h3><p>该查询方式用于查询某个形状内的点，形状主要有矩形、圆形、多边形三种，分别表示如下:</p>
+<ul>
+<li>矩形，box的两个值分别代表矩形左上角与右下角的坐标</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$box</span>:[[0,0],[3,3]]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>圆形，center的两个值分别代表圆心的坐标与半径</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$center</span>:[[0,0],r]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>矩形，polygon的值代表多边形各个顶点的坐标</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.集合名.find(&#123;pos:&#123;<span class="variable">$geoWithin</span>:&#123;<span class="variable">$polygon</span>:[[0,0],[3,3],[4,4],……]&#125;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="geoNear查询-geoNear查询使用runCommand命令进行使用"><a href="#geoNear查询-geoNear查询使用runCommand命令进行使用" class="headerlink" title="geoNear查询,geoNear查询使用runCommand命令进行使用"></a>geoNear查询,geoNear查询使用runCommand命令进行使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ db.runCommand(&#123;</span><br><span class="line">    geoNear:集合名字符串,</span><br><span class="line">    near:坐标数组,</span><br><span class="line">    minDistance:最小距离,可选</span><br><span class="line">    maxDistance:最多距离,可选</span><br><span class="line">    num:限制返回结果的数目</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.runCommand(&#123;<span class="string">"geoNear"</span>:<span class="string">"d"</span>,<span class="string">"near"</span>:[116.23,39.54]&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回的结果如下:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$ &#123;</span><br><span class="line">	<span class="string">"results"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"dis"</span> : 0,</span><br><span class="line">			<span class="string">"obj"</span> : &#123;</span><br><span class="line">				<span class="string">"_id"</span> : ObjectId(<span class="string">"59f2beb0476ef85f73f31d61"</span>),</span><br><span class="line">				<span class="string">"name"</span> : <span class="string">"北京"</span>,</span><br><span class="line">				<span class="string">"location"</span> : [</span><br><span class="line">					116.23,</span><br><span class="line">					39.54</span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"dis"</span> : 11.771325328950857,</span><br><span class="line">			<span class="string">"obj"</span> : &#123;</span><br><span class="line">				<span class="string">"_id"</span> : ObjectId(<span class="string">"59f2be99476ef85f73f31d60"</span>),</span><br><span class="line">				<span class="string">"name"</span> : <span class="string">"中央大街"</span>,</span><br><span class="line">				<span class="string">"location"</span> : [</span><br><span class="line">					126.23,</span><br><span class="line">					45.75</span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"stats"</span> : &#123;</span><br><span class="line">		<span class="string">"nscanned"</span> : 45,</span><br><span class="line">		<span class="string">"objectsLoaded"</span> : 2,</span><br><span class="line">		<span class="string">"avgDistance"</span> : 5.885662664475428,</span><br><span class="line">		<span class="string">"maxDistance"</span> : 11.771325328950857,</span><br><span class="line">		<span class="string">"time"</span> : 1</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"ok"</span> : 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：2d只适合两点间距离不是很远的情况下，距离近经纬网可以看成平面直角坐标系，距离大了以后随着地球曲率的影响，这样的计算就不准确了，就应该使用2dsphere</li>
+</ul>
+]]></content>
       
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mongodb </tag>
+            
+        </tags>
         
     </entry>
     
     <entry>
-      <title><![CDATA[Flask + Nginx + uwsgi]]></title>
+      <title><![CDATA[Flask Nginx uwsgi]]></title>
       <url>/uwsgi%20nginx%20flask/</url>
       <content type="html"><![CDATA[<p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站</p>
 <a id="more"></a>
@@ -390,32 +456,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -448,6 +488,32 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
         
