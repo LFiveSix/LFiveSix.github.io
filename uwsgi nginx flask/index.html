@@ -26,7 +26,7 @@
 <meta property="og:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.lfivesix.com/uwsgi%20nginx%20flask/index.html#">
-<meta property="og:updated_time" content="2017-12-25T07:36:36.337Z">
+<meta property="og:updated_time" content="2017-12-25T08:02:42.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask + Nginx + uwsgi">
 <meta name="twitter:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
@@ -354,6 +354,54 @@
 <p>根据最新的配置文件,启动新配置或有改动的进程,配置没有改动的进程不会受影响而重启。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ supervisorctl update</span><br></pre></td></tr></table></figure>
 <p>注意:显示用stop停止掉的进程，用reload或者update都不会自动重启</p>
+<h2 id="ubuntu16-04-下的Python切换"><a href="#ubuntu16-04-下的Python切换" class="headerlink" title="ubuntu16.04 下的Python切换"></a>ubuntu16.04 下的Python切换</h2><h3 id="ubuntu16-04-自带python2-Python3"><a href="#ubuntu16-04-自带python2-Python3" class="headerlink" title="ubuntu16.04 自带python2 Python3"></a>ubuntu16.04 自带python2 Python3</h3><ul>
+<li>python -V 查看Python版本</li>
+</ul>
+<h3 id="ubuntu16-04-下的Python切换-1"><a href="#ubuntu16-04-下的Python切换-1" class="headerlink" title="ubuntu16.04 下的Python切换"></a>ubuntu16.04 下的Python切换</h3><ul>
+<li>python2切换到python3</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update-alternatives --install /usr/bin/python python /usr/bin/python2 100</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update-alternatives --install /usr/bin/python python /usr/bin/python3 150</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换回2</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config python</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输入你想变成版本对应的Selection</li>
+</ul>
+<h2 id="贴一下中间出的错误"><a href="#贴一下中间出的错误" class="headerlink" title="贴一下中间出的错误"></a>贴一下中间出的错误</h2><h3 id="删除Nginx"><a href="#删除Nginx" class="headerlink" title="删除Nginx"></a>删除Nginx</h3><p>用到的所有命令如下：</p>
+<ul>
+<li>删除nginx，–purge包括配置文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get --purge remove nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>罗列出与nginx相关的软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg --get-selections|grep nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除上面查询出与nginx有关的软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get --purge remove ×××××</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看nginx正在运行的进程，如果有就kill掉</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef |grep nginx  </span><br><span class="line">$ <span class="built_in">kill</span> nginx进程  </span><br><span class="line">$ <span class="built_in">kill</span>  -9 pid</span><br></pre></td></tr></table></figure>
+<ul>
+<li>全局查找与nginx相关的文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find  /  -name  nginx*</span><br></pre></td></tr></table></figure>
+<ul>
+<li>依依删除4列出的所有文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf file</span><br></pre></td></tr></table></figure>
+<p>这样就可以完全卸载掉nginx包括配置文件，彻底删除nginx了</p>
+<ul>
+<li>再次重装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h3 id="使用ubuntu命令是出现的问题"><a href="#使用ubuntu命令是出现的问题" class="headerlink" title="使用ubuntu命令是出现的问题"></a>使用ubuntu命令是出现的问题</h3><ul>
+<li>按照 <a href="http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed给的三个办法解决了。" target="_blank" rel="noopener">http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed给的三个办法解决了。</a></li>
+</ul>
 
       
     </div>
@@ -365,7 +413,7 @@
         <p><span>本文标题:</span><a href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-07, 16:55:02</p>
-        <p><span>最后更新:</span>2017-12-25, 15:36:36</p>
+        <p><span>最后更新:</span>2017-12-25, 16:02:42</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/uwsgi nginx flask/" title="Flask + Nginx + uwsgi">http://www.LFiveSix.com/uwsgi nginx flask/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/uwsgi nginx flask/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -401,7 +449,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-Nginx-Uwsgi配置服务器"><span class="toc-number">1.</span> <span class="toc-text">Flask+Nginx+Uwsgi配置服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">1.1.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pip"><span class="toc-number">1.2.</span> <span class="toc-text">安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级pip"><span class="toc-number">1.3.</span> <span class="toc-text">升级pip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装uWSGI"><span class="toc-number">2.</span> <span class="toc-text">安装uWSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Nginx"><span class="toc-number">3.</span> <span class="toc-text">安装Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx的启动命令"><span class="toc-number">3.1.</span> <span class="toc-text">nginx的启动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx重新启动"><span class="toc-number">3.2.</span> <span class="toc-text">nginx重新启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx"><span class="toc-number">4.</span> <span class="toc-text">配置Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置信息"><span class="toc-number">4.1.</span> <span class="toc-text">配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-uwsgi"><span class="toc-number">4.2.</span> <span class="toc-text">配置 uwsgi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程监控"><span class="toc-number">4.3.</span> <span class="toc-text">进程监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于supervisord的一些命令"><span class="toc-number">4.4.</span> <span class="toc-text">关于supervisord的一些命令</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-Nginx-Uwsgi配置服务器"><span class="toc-number">1.</span> <span class="toc-text">Flask+Nginx+Uwsgi配置服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-number">1.1.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pip"><span class="toc-number">1.2.</span> <span class="toc-text">安装pip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级pip"><span class="toc-number">1.3.</span> <span class="toc-text">升级pip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装uWSGI"><span class="toc-number">2.</span> <span class="toc-text">安装uWSGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Nginx"><span class="toc-number">3.</span> <span class="toc-text">安装Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx的启动命令"><span class="toc-number">3.1.</span> <span class="toc-text">nginx的启动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx重新启动"><span class="toc-number">3.2.</span> <span class="toc-text">nginx重新启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Nginx"><span class="toc-number">4.</span> <span class="toc-text">配置Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置信息"><span class="toc-number">4.1.</span> <span class="toc-text">配置信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-uwsgi"><span class="toc-number">4.2.</span> <span class="toc-text">配置 uwsgi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程监控"><span class="toc-number">4.3.</span> <span class="toc-text">进程监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于supervisord的一些命令"><span class="toc-number">4.4.</span> <span class="toc-text">关于supervisord的一些命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu16-04-下的Python切换"><span class="toc-number">5.</span> <span class="toc-text">ubuntu16.04 下的Python切换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu16-04-自带python2-Python3"><span class="toc-number">5.1.</span> <span class="toc-text">ubuntu16.04 自带python2 Python3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu16-04-下的Python切换-1"><span class="toc-number">5.2.</span> <span class="toc-text">ubuntu16.04 下的Python切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贴一下中间出的错误"><span class="toc-number">6.</span> <span class="toc-text">贴一下中间出的错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#删除Nginx"><span class="toc-number">6.1.</span> <span class="toc-text">删除Nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用ubuntu命令是出现的问题"><span class="toc-number">6.2.</span> <span class="toc-text">使用ubuntu命令是出现的问题</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -508,7 +556,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
