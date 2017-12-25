@@ -13,7 +13,7 @@
     <entry>
       <title><![CDATA[Flask + Nginx + uwsgi]]></title>
       <url>/uwsgi%20nginx%20flask/</url>
-      <content type="html"><![CDATA[<p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)</p>
+      <content type="html"><![CDATA[<p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站</p>
 <a id="more"></a>
 <h2 id="Flask-Nginx-Uwsgi配置服务器"><a href="#Flask-Nginx-Uwsgi配置服务器" class="headerlink" title="Flask+Nginx+Uwsgi配置服务器"></a>Flask+Nginx+Uwsgi配置服务器</h2><h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
 <h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-pip</span><br></pre></td></tr></table></figure>
@@ -31,7 +31,17 @@
 <li>uwsgi_param UWSGI_SCRIPT 指定的启动程序 这里的li为启动程序名</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name 39.106.54.158;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                include uwsgi_params;</span><br><span class="line">                uwsgi_pass 127.0.0.1:5000;</span><br><span class="line">                uwsgi_param UWSGI_CHDIR /www/firstflask;</span><br><span class="line">                uwsgi_param UWSGI_SCRIPT li:app;</span><br><span class="line">                   &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="配置-uwsgi"><a href="#配置-uwsgi" class="headerlink" title="配置 uwsgi"></a>配置 uwsgi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ [uwsgi]</span><br><span class="line">	socket = 127.0.0.1:5000</span><br><span class="line">	processes = 4</span><br><span class="line">	threads = 2</span><br><span class="line">	master = <span class="literal">true</span></span><br><span class="line">	pythonpath = /www/firstflask</span><br><span class="line">	module = li</span><br><span class="line">	callable = app</span><br><span class="line">	memory-report = <span class="literal">true</span></span><br><span class="line">	logto = /www/firstflask/myuwsgi.log</span><br></pre></td></tr></table></figure>
+<h3 id="配置-uwsgi"><a href="#配置-uwsgi" class="headerlink" title="配置 uwsgi"></a>配置 uwsgi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ [uwsgi]</span><br><span class="line">	socket = 127.0.0.1:5000</span><br><span class="line">	processes = 4</span><br><span class="line">	threads = 2</span><br><span class="line">	master = <span class="literal">true</span></span><br><span class="line">	pythonpath = /www/firstflask</span><br><span class="line">	module = li</span><br><span class="line">	callable = app</span><br><span class="line">	memory-report = <span class="literal">true</span></span><br><span class="line">	logto = /www/firstflask/myuwsgi.log</span><br><span class="line">```  </span><br><span class="line">- 注释  </span><br><span class="line">- 千万千万千万记得加[uwsgi]</span><br><span class="line">- socket 和 nginx配置中uwsgi_pass一样</span><br><span class="line">- pythonpath 为项目的路径</span><br><span class="line">- module 表示项目启动模块，如上例为li.py，这里就为li</span><br><span class="line">- callable  表示Flask项目的实例名称，上例代码中app = Flask(__name__)，所以这里为app</span><br><span class="line">- logto uwsgi生成<span class="built_in">log</span>的路径</span><br><span class="line">- processes：表示开启多少个子进程处理请求。</span><br><span class="line">- threads：每个进程的线程数。</span><br><span class="line"></span><br><span class="line"><span class="comment">### 进程监控  </span></span><br><span class="line">安装supervisor仅支持python2（安装的时候要切换到python2下 apt-get install×××）</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ apt-get install supervisor</span><br></pre></td></tr></table></figure>
+<ul>
+<li>supervisor的全局配置文件在/etc/supervisor/supervisor.conf中。  </li>
+<li>新建一个my_supervisor.conf在/etc/supervisor/conf.d</li>
+<li>my_supervisor.conf配置信息如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ [program:firstflask]</span><br><span class="line">	<span class="built_in">command</span>=uwsgi --ini /www/firstflask/myuwsgi.ini</span><br><span class="line">	directory=/www/firstflask</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其他参数：</li>
+<li></li>
+</ul>
 ]]></content>
       
         <categories>
@@ -606,35 +616,6 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -667,6 +648,35 @@ $ git push
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         

@@ -17,19 +17,19 @@
 
 
 
-<meta name="description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
+<meta name="description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
 <meta name="keywords" content="bitbucket">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flask + Nginx + uwsgi">
 <meta property="og:url" content="http://www.LFiveSix.com/uwsgi nginx flask/index.html">
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
-<meta property="og:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
+<meta property="og:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.lfivesix.com/uwsgi%20nginx%20flask/index.html#">
-<meta property="og:updated_time" content="2017-12-25T07:05:38.371Z">
+<meta property="og:updated_time" content="2017-12-25T07:16:39.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask + Nginx + uwsgi">
-<meta name="twitter:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)">
+<meta name="twitter:description" content="用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站">
 <meta name="twitter:image" content="http://www.lfivesix.com/uwsgi%20nginx%20flask/index.html#">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -265,7 +265,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04)</p>
+        <p>用Flask+Nginx+Uwsgi 部署服务器。服务器(Ubuntu 16.04) 简单的部署web网站</p>
 <a id="more"></a>
 <h2 id="Flask-Nginx-Uwsgi配置服务器"><a href="#Flask-Nginx-Uwsgi配置服务器" class="headerlink" title="Flask+Nginx+Uwsgi配置服务器"></a>Flask+Nginx+Uwsgi配置服务器</h2><h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br></pre></td></tr></table></figure>
 <h3 id="安装pip"><a href="#安装pip" class="headerlink" title="安装pip"></a>安装pip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install python-pip</span><br></pre></td></tr></table></figure>
@@ -283,7 +283,17 @@
 <li>uwsgi_param UWSGI_SCRIPT 指定的启动程序 这里的li为启动程序名</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name 39.106.54.158;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                include uwsgi_params;</span><br><span class="line">                uwsgi_pass 127.0.0.1:5000;</span><br><span class="line">                uwsgi_param UWSGI_CHDIR /www/firstflask;</span><br><span class="line">                uwsgi_param UWSGI_SCRIPT li:app;</span><br><span class="line">                   &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="配置-uwsgi"><a href="#配置-uwsgi" class="headerlink" title="配置 uwsgi"></a>配置 uwsgi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ [uwsgi]</span><br><span class="line">	socket = 127.0.0.1:5000</span><br><span class="line">	processes = 4</span><br><span class="line">	threads = 2</span><br><span class="line">	master = <span class="literal">true</span></span><br><span class="line">	pythonpath = /www/firstflask</span><br><span class="line">	module = li</span><br><span class="line">	callable = app</span><br><span class="line">	memory-report = <span class="literal">true</span></span><br><span class="line">	logto = /www/firstflask/myuwsgi.log</span><br></pre></td></tr></table></figure>
+<h3 id="配置-uwsgi"><a href="#配置-uwsgi" class="headerlink" title="配置 uwsgi"></a>配置 uwsgi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ [uwsgi]</span><br><span class="line">	socket = 127.0.0.1:5000</span><br><span class="line">	processes = 4</span><br><span class="line">	threads = 2</span><br><span class="line">	master = <span class="literal">true</span></span><br><span class="line">	pythonpath = /www/firstflask</span><br><span class="line">	module = li</span><br><span class="line">	callable = app</span><br><span class="line">	memory-report = <span class="literal">true</span></span><br><span class="line">	logto = /www/firstflask/myuwsgi.log</span><br><span class="line">```  </span><br><span class="line">- 注释  </span><br><span class="line">- 千万千万千万记得加[uwsgi]</span><br><span class="line">- socket 和 nginx配置中uwsgi_pass一样</span><br><span class="line">- pythonpath 为项目的路径</span><br><span class="line">- module 表示项目启动模块，如上例为li.py，这里就为li</span><br><span class="line">- callable  表示Flask项目的实例名称，上例代码中app = Flask(__name__)，所以这里为app</span><br><span class="line">- logto uwsgi生成<span class="built_in">log</span>的路径</span><br><span class="line">- processes：表示开启多少个子进程处理请求。</span><br><span class="line">- threads：每个进程的线程数。</span><br><span class="line"></span><br><span class="line"><span class="comment">### 进程监控  </span></span><br><span class="line">安装supervisor仅支持python2（安装的时候要切换到python2下 apt-get install×××）</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ apt-get install supervisor</span><br></pre></td></tr></table></figure>
+<ul>
+<li>supervisor的全局配置文件在/etc/supervisor/supervisor.conf中。  </li>
+<li>新建一个my_supervisor.conf在/etc/supervisor/conf.d</li>
+<li>my_supervisor.conf配置信息如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ [program:firstflask]</span><br><span class="line">	<span class="built_in">command</span>=uwsgi --ini /www/firstflask/myuwsgi.ini</span><br><span class="line">	directory=/www/firstflask</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其他参数：</li>
+<li></li>
+</ul>
 
       
     </div>
@@ -295,7 +305,7 @@
         <p><span>本文标题:</span><a href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-07, 16:55:02</p>
-        <p><span>最后更新:</span>2017-12-25, 15:05:38</p>
+        <p><span>最后更新:</span>2017-12-25, 15:16:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/uwsgi nginx flask/" title="Flask + Nginx + uwsgi">http://www.LFiveSix.com/uwsgi nginx flask/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/uwsgi nginx flask/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -438,7 +448,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb index</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask + Nginx + uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
