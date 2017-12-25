@@ -22,7 +22,7 @@
 <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install nginx</span><br></pre></td></tr></table></figure>
 <h3 id="nginx的启动命令"><a href="#nginx的启动命令" class="headerlink" title="nginx的启动命令"></a>nginx的启动命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/nginx start</span><br></pre></td></tr></table></figure>
 <h3 id="nginx重新启动"><a href="#nginx重新启动" class="headerlink" title="nginx重新启动"></a>nginx重新启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/nginx restartl </span><br><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
-<p>这时候在浏览器地址栏输入服务器的 ip 地址，看到下面的页面就表明 Nginx 已经成功启动了！<br><img src="#" alt="1"></p>
+<p>这时候在浏览器地址栏输入服务器的 ip 地址，看到下面的页面就表明 Nginx 已经成功启动了！<br><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG216.jpeg" alt="1"></p>
 <h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><p>删除nginx的配置文件，新建一个配置文件default，配置信息如下：</p>
 <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><ul>
 <li>server_name域名或者服务器公网ip  </li>
@@ -148,7 +148,13 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get install nginx</span><br></pre></td></tr></table></figure>
 <h3 id="使用ubuntu命令是出现的问题"><a href="#使用ubuntu命令是出现的问题" class="headerlink" title="使用ubuntu命令是出现的问题"></a>使用ubuntu命令是出现的问题</h3><ul>
-<li>按照 <a href="http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed给的三个办法解决了。" target="_blank" rel="noopener">http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed给的三个办法解决了。</a></li>
+<li>按照[这里给的三个办法解决了。] <a href="http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed" target="_blank" rel="noopener">http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed</a></li>
+<li>但是我记得我好像是第三个办法解决的，当时错误信息丢失了。下次再碰见在补上吧，只记得输入locale有如下信息。</li>
+<li><p>locale</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">locale: Cannot <span class="built_in">set</span> LC_CTYPE to default locale: No such file or directory</span><br><span class="line">locale: Cannot <span class="built_in">set</span> LC_ALL to default locale: No such file or directory</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">LANGUAGE=update-alternatives --config python</span><br><span class="line">LC_CTYPE=zh_CN.UTF-8</span><br><span class="line">LC_NUMERIC=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_TIME=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_COLLATE=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_MONETARY=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_MESSAGES=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_PAPER=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_NAME=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_ADDRESS=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_TELEPHONE=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_MEASUREMENT=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_IDENTIFICATION=<span class="string">"en_US.UTF-8"</span></span><br><span class="line">LC_ALL=</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我用的是：locale-gen zh_CN.UTF-8 en_US.UTF-8（好像是这个解决的）</p>
+</li>
 </ul>
 ]]></content>
       
@@ -384,6 +390,32 @@
     </entry>
     
     <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mac 安装MongoDB]]></title>
       <url>/mac%E5%AE%89%E8%A3%85mongodb/</url>
       <content type="html"><![CDATA[<p>使用HomeBrew安装</p>
@@ -416,32 +448,6 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
             
         </tags>
         
@@ -724,35 +730,6 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -785,6 +762,35 @@ $ git push
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
