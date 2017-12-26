@@ -767,7 +767,10 @@ $ git push
       <content type="html"><![CDATA[<p>搞了第一台属于自己的mac，记录一下折腾的轨迹。<br>mac终端自带的前缀太长了，改的简短一点。</p>
 <a id="more"></a>
 <h2 id="修改前缀"><a href="#修改前缀" class="headerlink" title="修改前缀"></a>修改前缀</h2><h3 id="etc-bashrc-中的PS1变量的内容就是前缀的内容"><a href="#etc-bashrc-中的PS1变量的内容就是前缀的内容" class="headerlink" title="/etc/bashrc 中的PS1变量的内容就是前缀的内容"></a>/etc/bashrc 中的PS1变量的内容就是前缀的内容</h3><ul>
-<li>sudo vim /etc/bashrc  </li>
+<li>sudo vim /etc/bashrc </li>
+</ul>
+<h3 id="原来的内容："><a href="#原来的内容：" class="headerlink" title="原来的内容："></a>原来的内容：</h3><ul>
+<li>PS1=’\h:\W \u\$ ‘</li>
 </ul>
 <h3 id="改成PS1-’-u-‘"><a href="#改成PS1-’-u-‘" class="headerlink" title="改成PS1=’\u\$ ‘"></a>改成PS1=’\u\$ ‘</h3><ul>
 <li>wq!保存并退出，重新打开终端，修改成功<h3 id="贴一下给个参数代表的含义"><a href="#贴一下给个参数代表的含义" class="headerlink" title="贴一下给个参数代表的含义"></a>贴一下给个参数代表的含义</h3></li>
@@ -790,6 +793,35 @@ $ git push
         <tags>
             
             <tag> mac </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
@@ -828,35 +860,6 @@ $ git push
         <tags>
             
             <tag> books </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
             
         </tags>
         

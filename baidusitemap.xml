@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/%E4%BF%AE%E6%94%B9mac%E7%BB%88%E7%AB%AF%E5%89%8D%E7%BC%80/</loc>
+    <lastmod>2017-12-26T01:53:25.079Z</lastmod>
+    <data>
+        <display>
+        <title>修改mac终端命令行前缀的显示内容</title>
+        <pubTime>2017-11-14T16:00:00.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/mongodb%20index/</loc>
-    <lastmod>2017-12-25T09:24:25.238Z</lastmod>
+    <lastmod>2017-12-26T01:16:36.966Z</lastmod>
     <data>
         <display>
         <title>mongodb地理位置索引</title>
@@ -278,26 +298,6 @@
            
              
               <breadCrumb title="mac的小操作" url="http://www.LFiveSix.com/categories/mac%E7%9A%84%E5%B0%8F%E6%93%8D%E4%BD%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/%E4%BF%AE%E6%94%B9mac%E7%BB%88%E7%AB%AF%E5%89%8D%E7%BC%80/</loc>
-    <lastmod>2017-11-15T14:10:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>修改mac终端命令行前缀的显示内容</title>
-        <pubTime>2017-11-14T16:00:00.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>
