@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
 <meta property="og:description" content="记录下mongodb的基本使用方法，积累记录！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T09:22:57.322Z">
+<meta property="og:updated_time" content="2017-12-27T03:39:11.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB的基本使用">
 <meta name="twitter:description" content="记录下mongodb的基本使用方法，积累记录！">
@@ -281,7 +281,7 @@
 <h3 id="查询前N项数据"><a href="#查询前N项数据" class="headerlink" title="查询前N项数据"></a>查询前N项数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
 <h3 id="从第n项开始查询"><a href="#从第n项开始查询" class="headerlink" title="从第n项开始查询"></a>从第n项开始查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().skip(N)</span><br></pre></td></tr></table></figure>
 <h3 id="统计集合中数据数量"><a href="#统计集合中数据数量" class="headerlink" title="统计集合中数据数量"></a>统计集合中数据数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.count()</span><br></pre></td></tr></table></figure>
-<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db 数据库名 --collection 集合名 --drop --file /home/lzw/PycharmProjects/restaurants.json（数据路径</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db geo --collection geo --drop --file /lizw/beijing.json</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注：原集合存在会删除原有集合</li>
 </ul>
@@ -307,7 +307,7 @@
         <p><span>本文标题:</span><a href="/mongodb的基本使用方法/">MongoDB的基本使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-11-27, 00:00:00</p>
-        <p><span>最后更新:</span>2017-12-18, 17:22:57</p>
+        <p><span>最后更新:</span>2017-12-27, 11:39:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/mongodb的基本使用方法/" title="MongoDB的基本使用">http://www.LFiveSix.com/mongodb的基本使用方法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/mongodb的基本使用方法/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -323,15 +323,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/镜子里的我/">
-                    今天我们来认识一个人
+                <a href="/ubuntu 安装MongoDB/">
+                    ubuntu 安装MongoDB
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/ubuntu 安装MongoDB/">
-                    ubuntu 安装MongoDB
+                <a href="/解决办法/">
+                    mac自带邮件不能登录163邮箱
                 </a>
             </div>
         
@@ -436,7 +436,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/镜子里的我/" title="上一篇: 今天我们来认识一个人">
+            <a href="/ubuntu 安装MongoDB/" title="上一篇: ubuntu 安装MongoDB">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -444,13 +444,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/ubuntu 安装MongoDB/" title="下一篇: ubuntu 安装MongoDB">
+            <a href="/解决办法/" title="下一篇: mac自带邮件不能登录163邮箱">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/镜子里的我/">今天我们来认识一个人</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
