@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/knowledge_point/</loc>
+    <lastmod>2017-12-28T03:23:36.758Z</lastmod>
+    <data>
+        <display>
+        <title>python的零散的小知识点</title>
+        <pubTime>2017-12-28T03:07:06.860Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2017-12-27T03:39:11.887Z</lastmod>
     <data>
@@ -191,9 +211,9 @@
         <title>mac 安装MongoDB</title>
         <pubTime>2017-11-22T16:00:00.000Z</pubTime>
         
-        <tag>mac</tag>
-         
         <tag>MongoDB</tag>
+         
+        <tag>mac</tag>
          
          
            
