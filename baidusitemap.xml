@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-01-03T06:50:24.470Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 基本命令</title>
+        <pubTime>2017-11-23T16:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/knowledge_point/</loc>
     <lastmod>2017-12-28T03:23:36.758Z</lastmod>
     <data>
@@ -111,26 +131,6 @@
 
     
   <url>
-    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-12-18T03:04:09.139Z</lastmod>
-    <data>
-        <display>
-        <title>Linux 基本命令</title>
-        <pubTime>2017-11-23T16:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.LFiveSix.com/visit/</loc>
     <lastmod>2017-12-08T03:59:57.136Z</lastmod>
     <data>
@@ -211,9 +211,9 @@
         <title>mac 安装MongoDB</title>
         <pubTime>2017-11-22T16:00:00.000Z</pubTime>
         
-        <tag>MongoDB</tag>
-         
         <tag>mac</tag>
+         
+        <tag>MongoDB</tag>
          
          
            

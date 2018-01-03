@@ -431,8 +431,8 @@
 <h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux | grep uwsgi</span><br></pre></td></tr></table></figure>
 <p>查看uwsgi的进程</p>
 <h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
-<p> G：直接跳转到文件的底部。<br> gg: 跳转到文件首<br> 0: 跳转到行首。<br>   $: 跳转到行尾。</p>
-<p>   #：跳转到该行的第#个位置。<br>:#：跳转到#行。<br>        /： 输入关键字，发现不是要找的，直接在按n，向后查找直到找到为止。<br>        ?： 输入关键字，发现不是要找的，直接在按n，向前查找直到找到为止。</p>
+<h3 id="编辑文件内容的小操作"><a href="#编辑文件内容的小操作" class="headerlink" title="编辑文件内容的小操作"></a>编辑文件内容的小操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ G：直接跳转到文件的底部</span><br><span class="line">$ gg: 跳转到文件首</span><br><span class="line">$ 0: 跳转到行首。</span><br><span class="line">$ $: 跳转到行尾。</span><br><span class="line">$ <span class="comment">#：跳转到该行的第#个位置。</span></span><br><span class="line">$ :<span class="comment">#：跳转到#行。</span></span><br><span class="line">$ /： 输入关键字，发现不是要找的，直接在按n，向后查找直到找到为止。</span><br><span class="line">$ ?： 输入关键字，发现不是要找的，直接在按n，向前查找直到找到为止。</span><br></pre></td></tr></table></figure>
+<h3 id="列出当前用户组"><a href="#列出当前用户组" class="headerlink" title="列出当前用户组"></a>列出当前用户组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ll</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -480,9 +480,9 @@ $ brew list (已经不存在 mongodb)
         
         <tags>
             
-            <tag> MongoDB </tag>
-            
             <tag> mac </tag>
+            
+            <tag> MongoDB </tag>
             
         </tags>
         
@@ -794,35 +794,6 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -855,6 +826,35 @@ $ git push
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         
