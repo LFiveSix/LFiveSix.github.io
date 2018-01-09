@@ -3,6 +3,89 @@
   
     
     <entry>
+      <title><![CDATA[Webhooks bitbucket进行服务器自动化部署代码]]></title>
+      <url>/Pycharm%20Webhooks%20bitbucket/</url>
+      <content type="html"><![CDATA[<p>每次部署代码都需要在服务器从bitbucket仓库重新拉取一次，这个过程次数多了真的很浪费时间，弄了一个服务器端自动化部署代码！</p>
+<a id="more"></a>
+<h2 id="Pycharm-Webhooks-bitbucket进行服务器自动化部署代码"><a href="#Pycharm-Webhooks-bitbucket进行服务器自动化部署代码" class="headerlink" title="Pycharm Webhooks bitbucket进行服务器自动化部署代码"></a>Pycharm Webhooks bitbucket进行服务器自动化部署代码</h2><h3 id="上传代码至bitbucket"><a href="#上传代码至bitbucket" class="headerlink" title="上传代码至bitbucket"></a>上传代码至bitbucket</h3><ul>
+<li>项目代码仓库使用的是bitbucket，我编辑器用的是pycharm，配置好pycharm可以一键上传代码至bitbucket仓库，再也不用繁琐的git命令了，有关pycharm上传代码至bitbucket的配置请看<a href="http://lfivesix.com/use%20pycharm/" target="_blank" rel="noopener">这里</a>。</li>
+</ul>
+<h3 id="存储仓库bitbucket的设置"><a href="#存储仓库bitbucket的设置" class="headerlink" title="存储仓库bitbucket的设置"></a>存储仓库bitbucket的设置</h3><ul>
+<li>bitbucket的设置很简单，贴一下图片，看图就可以看的懂！（url的由来看下面，下面会告诉url怎么来的）</li>
+<li><a href=""></a></li>
+</ul>
+<h3 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h3><ul>
+<li>服务器是阿里云的服务器，用的uwsgi+nginx+flask搭建的，有关怎么配置服务器请看<a href="http://lfivesix.com/uwsgi%20nginx%20flask/" target="_blank" rel="noopener">这里</a>,这里只贴怎么自动化部署代码！</li>
+<li>我们先来定义路由，就是在bitbucket设置需要填写的路由。因为我使用的是flask搭建的，涉及到了csrf保护，如果不懂csrf去<a href="http://www.pythondoc.com/flask-wtf/csrf.html" target="_blank" rel="noopener">这里自行了解</a>，每次运行都会出现400的错误，因为我们没有通过CSRF 验证，我把验证关了！</li>
+<li>在你的代码中加入下面的代码：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from flask_wtf.csrf import CSRFProtect</span><br><span class="line">csrf = CSRFProtect()</span><br><span class="line">csrf.init_app(app)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后在不需要保护的路由上当加上:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@csrf.exempt</span><br></pre></td></tr></table></figure>
+<p>这样400的http错误就解决了。这时候你在pycharm上传代码，只是上传到了仓库，我们还需要在函数中执行拉取新代码并且重启服务!  </p>
+<h3 id="编写自动拉取新代码的脚本"><a href="#编写自动拉取新代码的脚本" class="headerlink" title="编写自动拉取新代码的脚本"></a>编写自动拉取新代码的脚本</h3><p>编写mcld.sh脚本，代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /www/mcld/</span><br><span class="line">git stash</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /etc/supervisor/</span><br><span class="line">supervisorctl restart all</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解释:拉取了最新代码并且重启了服务，我进程监控用的supervisorctl</li>
+</ul>
+<h3 id="在函数中执行mcld-sh脚本"><a href="#在函数中执行mcld-sh脚本" class="headerlink" title="在函数中执行mcld.sh脚本"></a>在函数中执行mcld.sh脚本</h3><p>代码片段示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@csrf.exempt</span><br><span class="line">@app.route(<span class="string">'/webhook'</span>, methods=[<span class="string">'POST'</span>])</span><br><span class="line">def webhook():</span><br><span class="line">    <span class="comment"># status = os.system('sh /str/mcld.sh')</span></span><br><span class="line">    status = subprocess.Popen([<span class="string">'sh /str/mcld.sh'</span>], shell=True)</span><br><span class="line">    <span class="built_in">return</span> <span class="string">"succeed"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>status = os.system(‘sh /str/mcld.sh’)，使用这个或者subprocess.call([‘sh /str/mcld.sh’], shell=True)在bitbucket上一直显示timeout，因为是仓库发送了post请求，然后服务器收到请求生成子进程去执行脚本程序，但是需要子进程结束后才返给bitbucket，所以显示timeout。而subprocess.Popen([‘sh /str/mcld.sh’], shell=True)收到了请求直接就返回给bitbucket，和执行脚本的子进程互不干扰。（我是这么理解的）</li>
+<li></li>
+<li>subprocess的目的就是启动一个新的进程并且与之通信。subprocess模块中只定义了一个类: Popen。可以使用Popen来创建进程，并与进程进行复杂的交互。它的构造函数如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subprocess.Popen(args, bufsize=0, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=False, shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数args可以是字符串或者序列类型（如：list，元组），用于指定进程的可执行文件及其参数。如果是序列类型，第一个元素通常是可执行文件的路径。我们也可以显式的使用executeable参数来指定可执行文件的路径。  </li>
+<li>参数stdin, stdout, stderr分别表示程序的标准输入、输出、错误句柄。他们可以是PIPE，文件描述符或文件对象，也可以设置为None，表示从父进程继承。<br>如果参数shell设为true，程序将通过shell来执行。  </li>
+<li>参数env是字典类型，用于指定子进程的环境变量。如果env = None，子进程的环境变量将从父进程中继承。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">subprocess.PIPE</span><br><span class="line">``` </span><br><span class="line">  </span><br><span class="line">- 在创建Popen对象时，subprocess.PIPE可以初始化stdin, stdout或stderr参数。表示与子进程通信的标准流。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">subprocess.STDOUT</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- 创建Popen对象时，用于初始化stderr参数，表示将错误通过标准输出流输出。</span><br><span class="line">Popen的方法：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">Popen.poll()</span><br></pre></td></tr></table></figure>
+<p>用于检查子进程是否已经结束。设置并返回returncode属性。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.wait()</span><br></pre></td></tr></table></figure>
+<p>等待子进程结束。设置并返回returncode属性。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.communicate(input=None)</span><br></pre></td></tr></table></figure>
+<p>与子进程进行交互。向stdin发送数据，或从stdout和stderr中读取数据。可选参数input指定发送到子进程的参数。Communicate()返回一个元组：(stdoutdata, stderrdata)。注意：如果希望通过进程的stdin向其发送数据，在创建Popen对象的时候，参数stdin必须被设置为PIPE。同样，如果希望从stdout和stderr获取数据，必须将stdout和stderr设置为PIPE。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.send_signal(signal)</span><br></pre></td></tr></table></figure>
+<p>向子进程发送信号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.terminate()</span><br></pre></td></tr></table></figure>
+<p>停止(stop)子进程。在windows平台下，该方法将调用Windows API TerminateProcess（）来结束子进程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.kill()</span><br></pre></td></tr></table></figure>
+<p>杀死子进程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.pid</span><br></pre></td></tr></table></figure>
+<p>获取子进程的进程ID。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.returncode</span><br></pre></td></tr></table></figure>
+<p>获取进程的返回值。如果进程还没有结束，返回None。</p>
+<h2 id="这样就实现了一键上传代码至存储仓库和自动部署代码到服务器"><a href="#这样就实现了一键上传代码至存储仓库和自动部署代码到服务器" class="headerlink" title="这样就实现了一键上传代码至存储仓库和自动部署代码到服务器"></a>这样就实现了一键上传代码至存储仓库和自动部署代码到服务器</h2><p>　</p>
+<p>　　</p>
+<p>　　</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> webhooks </tag>
+            
+            <tag> bitbucket </tag>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[python的零散的小知识点]]></title>
       <url>/knowledge_point/</url>
       <content type="html"><![CDATA[<p>记录一些python的零散知识点！</p>
