@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
 <meta property="og:description" content="记录一些python的零散知识点！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T03:23:36.758Z">
+<meta property="og:updated_time" content="2018-01-09T03:45:12.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python的零散的小知识点">
 <meta name="twitter:description" content="记录一些python的零散知识点！">
@@ -270,6 +270,13 @@
 <li>eg:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ A = <span class="built_in">eval</span>(B)</span><br><span class="line">$ eg: user = <span class="string">"&#123;'name' : 'jim', 'sex' : 'male', 'age': 18&#125;"</span></span><br><span class="line">$ b=<span class="built_in">eval</span>(user)</span><br><span class="line">$ &gt;&gt;&gt; b</span><br><span class="line">$ &#123;<span class="string">'age'</span>: 18, <span class="string">'name'</span>: <span class="string">'jim'</span>, <span class="string">'sex'</span>: <span class="string">'male'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="整理dict"><a href="#整理dict" class="headerlink" title="整理dict"></a>整理dict</h3><ul>
+<li>将凌乱的字典转换成带缩进的，树状的效果，用以下的方法：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">jsonDumpsIndentStr = json.dumps(demoDictList, indent=1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"jsonDumpsIndentStr="</span>, jsonDumpsIndentStr)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加indent=1，就会变成带缩进的，树状的效果，没有的话就是紧凑型的！</li>
+</ul>
 
       
     </div>
@@ -281,7 +288,7 @@
         <p><span>本文标题:</span><a href="/knowledge_point/">python的零散的小知识点</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2017-12-28, 11:07:06</p>
-        <p><span>最后更新:</span>2017-12-28, 11:23:36</p>
+        <p><span>最后更新:</span>2018-01-09, 11:45:12</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/knowledge_point/" title="python的零散的小知识点">http://www.LFiveSix.com/knowledge_point/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/knowledge_point/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -311,7 +318,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python"><span class="toc-number">1.</span> <span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Str-转-dict"><span class="toc-number">1.1.</span> <span class="toc-text">Str 转 dict</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python"><span class="toc-number">1.</span> <span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Str-转-dict"><span class="toc-number">1.1.</span> <span class="toc-text">Str 转 dict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#整理dict"><span class="toc-number">1.2.</span> <span class="toc-text">整理dict</span></a></li></ol></li></ol>
         
     </div>
     <style>

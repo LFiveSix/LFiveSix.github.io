@@ -12,6 +12,13 @@
 <li>eg:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ A = <span class="built_in">eval</span>(B)</span><br><span class="line">$ eg: user = <span class="string">"&#123;'name' : 'jim', 'sex' : 'male', 'age': 18&#125;"</span></span><br><span class="line">$ b=<span class="built_in">eval</span>(user)</span><br><span class="line">$ &gt;&gt;&gt; b</span><br><span class="line">$ &#123;<span class="string">'age'</span>: 18, <span class="string">'name'</span>: <span class="string">'jim'</span>, <span class="string">'sex'</span>: <span class="string">'male'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="整理dict"><a href="#整理dict" class="headerlink" title="整理dict"></a>整理dict</h3><ul>
+<li>将凌乱的字典转换成带缩进的，树状的效果，用以下的方法：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">jsonDumpsIndentStr = json.dumps(demoDictList, indent=1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"jsonDumpsIndentStr="</span>, jsonDumpsIndentStr)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加indent=1，就会变成带缩进的，树状的效果，没有的话就是紧凑型的！</li>
+</ul>
 ]]></content>
       
         <categories>
@@ -114,7 +121,7 @@
 <h2 id="安装uWSGI"><a href="#安装uWSGI" class="headerlink" title="安装uWSGI"></a>安装uWSGI</h2><p>在安装uWSGI前，需要解决uWSGI的依赖问题，因为uWSGI是一个C语言写的应用，所以我们需要C编译器，以及python开发相关组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install build-essential </span><br><span class="line">$ apt-get install python-dev </span><br><span class="line">$ pip install uwsgi</span><br></pre></td></tr></table></figure></p>
 <h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install nginx</span><br></pre></td></tr></table></figure>
 <h3 id="nginx的启动命令"><a href="#nginx的启动命令" class="headerlink" title="nginx的启动命令"></a>nginx的启动命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/nginx start</span><br></pre></td></tr></table></figure>
-<h3 id="nginx重新启动"><a href="#nginx重新启动" class="headerlink" title="nginx重新启动"></a>nginx重新启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/nginx restartl </span><br><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
+<h3 id="nginx重新启动"><a href="#nginx重新启动" class="headerlink" title="nginx重新启动"></a>nginx重新启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ /etc/init.d/nginx restart </span><br><span class="line">$ sudo service nginx restart</span><br></pre></td></tr></table></figure>
 <p>这时候在浏览器地址栏输入服务器的 ip 地址，看到下面的页面就表明 Nginx 已经成功启动了！<br><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG216.jpeg" alt="1"></p>
 <h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><p>删除nginx的配置文件，新建一个配置文件default，配置信息如下：</p>
 <h3 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h3><ul>
