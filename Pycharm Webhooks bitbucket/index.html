@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
 <meta property="og:description" content="每次部署代码都需要在服务器从bitbucket仓库重新拉取一次，这个过程次数多了真的很浪费时间，弄了一个服务器端自动化部署代码！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-09T12:47:27.651Z">
+<meta property="og:updated_time" content="2018-01-09T12:56:35.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webhooks bitbucket进行服务器自动化部署代码">
 <meta name="twitter:description" content="每次部署代码都需要在服务器从bitbucket仓库重新拉取一次，这个过程次数多了真的很浪费时间，弄了一个服务器端自动化部署代码！">
@@ -292,7 +292,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@csrf.exempt</span><br><span class="line">@app.route(<span class="string">'/webhook'</span>, methods=[<span class="string">'POST'</span>])</span><br><span class="line">def webhook():</span><br><span class="line">    <span class="comment"># status = os.system('sh /str/mcld.sh')</span></span><br><span class="line">    status = subprocess.Popen([<span class="string">'sh /str/mcld.sh'</span>], shell=True)</span><br><span class="line">    <span class="built_in">return</span> <span class="string">"succeed"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>status = os.system(‘sh /str/mcld.sh’)，使用这个或者subprocess.call([‘sh /str/mcld.sh’], shell=True)在bitbucket上一直显示timeout，因为是仓库发送了post请求，然后服务器收到请求生成子进程去执行脚本程序，但是需要子进程结束后才返给bitbucket，所以显示timeout。而subprocess.Popen([‘sh /str/mcld.sh’], shell=True)收到了请求直接就返回给bitbucket，和执行脚本的子进程互不干扰。（我是这么理解的）</li>
-<li></li>
 <li>subprocess的目的就是启动一个新的进程并且与之通信。subprocess模块中只定义了一个类: Popen。可以使用Popen来创建进程，并与进程进行复杂的交互。它的构造函数如下：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subprocess.Popen(args, bufsize=0, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=False, shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0)</span><br></pre></td></tr></table></figure>
@@ -301,7 +300,11 @@
 <li>参数stdin, stdout, stderr分别表示程序的标准输入、输出、错误句柄。他们可以是PIPE，文件描述符或文件对象，也可以设置为None，表示从父进程继承。<br>如果参数shell设为true，程序将通过shell来执行。  </li>
 <li>参数env是字典类型，用于指定子进程的环境变量。如果env = None，子进程的环境变量将从父进程中继承。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">subprocess.PIPE</span><br><span class="line">``` </span><br><span class="line">  </span><br><span class="line">- 在创建Popen对象时，subprocess.PIPE可以初始化stdin, stdout或stderr参数。表示与子进程通信的标准流。</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">subprocess.STDOUT</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- 创建Popen对象时，用于初始化stderr参数，表示将错误通过标准输出流输出。</span><br><span class="line">Popen的方法：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">Popen.poll()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subprocess.PIPE</span><br></pre></td></tr></table></figure>
+<p>在创建Popen对象时，subprocess.PIPE可以初始化stdin, stdout或stderr参数。表示与子进程通信的标准流。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subprocess.STDOUT</span><br></pre></td></tr></table></figure>
+<p>创建Popen对象时，用于初始化stderr参数，表示将错误通过标准输出流输出。<br>Popen的方法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.poll()</span><br></pre></td></tr></table></figure>
 <p>用于检查子进程是否已经结束。设置并返回returncode属性。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Popen.wait()</span><br></pre></td></tr></table></figure>
 <p>等待子进程结束。设置并返回returncode属性。</p>
@@ -331,7 +334,7 @@
         <p><span>本文标题:</span><a href="/Pycharm Webhooks bitbucket/">Webhooks bitbucket进行服务器自动化部署代码</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
         <p><span>发布时间:</span>2018-01-09, 20:47:26</p>
-        <p><span>最后更新:</span>2018-01-09, 20:47:27</p>
+        <p><span>最后更新:</span>2018-01-09, 20:56:35</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/Pycharm Webhooks bitbucket/" title="Webhooks bitbucket进行服务器自动化部署代码">http://www.LFiveSix.com/Pycharm Webhooks bitbucket/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/Pycharm Webhooks bitbucket/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -466,7 +469,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Pycharm Webhooks bitbucket/">Webhooks bitbucket进行服务器自动化部署代码</a></li><li class="post-list-item"><a class="post-list-link" href="/knowledge_point/">python的零散的小知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi部署服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Pycharm Webhooks bitbucket/">Webhooks bitbucket进行服务器自动化部署代码</a></li><li class="post-list-item"><a class="post-list-link" href="/knowledge_point/">python的零散的小知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi部署服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
 
 
 
