@@ -3,6 +3,74 @@
   
     
     <entry>
+      <title><![CDATA[用七牛当图片存储仓库！]]></title>
+      <url>/Qi_niu/</url>
+      <content type="html"><![CDATA[<p>使用七牛作为图床存储图片，语言使用的是python！</p>
+<a id="more"></a>
+<h2 id="用七牛当图片存储仓库！"><a href="#用七牛当图片存储仓库！" class="headerlink" title="用七牛当图片存储仓库！"></a>用七牛当图片存储仓库！</h2><ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/1242/python" target="_blank" rel="noopener">python官方文档</a></li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>直接安装</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install qiniu</span><br><span class="line">或</span><br><span class="line">easy_install qiniu</span><br></pre></td></tr></table></figure>
+<ul>
+<li>源码安装</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#从Python SDK 下载地址下载源码</span><br><span class="line">tar xvzf python-sdk-$VERSION.tar.gz</span><br><span class="line">cd python-sdk-$VERSION</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
+<li>在使用SDK 前，您需要一对有效的 AccessKey 和 SecretKey 签名授权。</li>
+<li>可以通过如下步骤获得：1.开通七牛开发者帐号 2.登录七牛开发者平台，查看 Access Key 和 Secret Key。</li>
+<li>获取Access Key 和 Secret Key 后，调用如下两行代码进行初始化对接：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from qiniu import Auth</span><br><span class="line">q = Auth(access_key, secret_key)</span><br></pre></td></tr></table></figure>
+<h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">from qiniu import Auth, put_file</span><br><span class="line"></span><br><span class="line"># 填写你的Access Key 和 Secret Key</span><br><span class="line">access_key = &apos;Access_Key&apos;</span><br><span class="line">secret_key = &apos;Secret_Key&apos;</span><br><span class="line"></span><br><span class="line">#构建鉴权对象</span><br><span class="line">q = Auth(access_key, secret_key)</span><br><span class="line"></span><br><span class="line">#要上传的空间</span><br><span class="line">bucket_name = &apos;Bucket_Name&apos;</span><br><span class="line"></span><br><span class="line">#上传到七牛后保存的文件名</span><br><span class="line">key = &apos;my-python-logo.png&apos;</span><br><span class="line"></span><br><span class="line">#生成上传 Token，可以指定过期时间等</span><br><span class="line">token = q.upload_token(bucket_name, key, 3600)</span><br><span class="line"></span><br><span class="line">#要上传文件的本地路径</span><br><span class="line">localfile = &apos;./sync/bbb.jpg&apos;</span><br><span class="line"></span><br><span class="line">put_file(token, key, localfile)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下面是一个非常简单的上传demo：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">from qiniu import Auth, put_file</span><br><span class="line">access_key = &quot;bUU6U40lkXL5xKTZHkB0XmE&quot;</span><br><span class="line">secret_key = &quot;Lt6Q7U5Oti_HP4bCteLyy&quot;</span><br><span class="line">q = Auth(access_key, secret_key)</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@app.route(&apos;/&apos;)</span><br><span class="line">def hello_world():</span><br><span class="line">    bucket_name = &apos;####&apos;</span><br><span class="line">    number = &quot;123&quot;</span><br><span class="line">    key = &apos;&#123;0&#125;&apos;.format(number)</span><br><span class="line">    token = q.upload_token(bucket_name, key, 3600)</span><br><span class="line">    localfile = &apos;......./static/img/v2-c947dc2dcc534f93f295cae1df1f0d31_hd.jpg&apos;</span><br><span class="line">    put_file(token, key, localfile)</span><br><span class="line">    return &apos;Hello World!&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>记得把access_key、secret_key、bucket_name、localfile换成自己的。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li><p>有两种构造base_url的形式 1.base_url = ‘<a href="http://%s/%s" target="_blank" rel="noopener">http://%s/%s</a>‘ % (bucket_domain, key)  2. base_url = ‘<a href="http://domain/key&#39;（直接输入url的方式下载），我使用的是第一种" target="_blank" rel="noopener">http://domain/key&#39;（直接输入url的方式下载），我使用的是第一种</a></p>
+</li>
+<li><p>bucket_domain是图片仓库的外链默认域名<br>-<img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG231.jpeg" alt=""></p>
+</li>
+<li><p>key 是你之前存储过的，我这里的key就是123</p>
+</li>
+<li><p>设置token过期时间</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private_url = q.private_download_url(base_url, expires=3600)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下面是一个简单的下载demo：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&apos;/1&apos;)</span><br><span class="line">def down_load():</span><br><span class="line">    bucket_domain = &apos;oz4pkhxf8.bkt.clouddn.com&apos;</span><br><span class="line">    number = &quot;123&quot;</span><br><span class="line">    key_image_qiniu = &apos;&#123;0&#125;&apos;.format(number)</span><br><span class="line">    key = key_image_qiniu</span><br><span class="line">    base_url = &apos;http://%s/%s&apos; % (bucket_domain, key)</span><br><span class="line">    private_url = q.private_download_url(base_url, expires=3600)</span><br><span class="line">    print(private_url)</span><br><span class="line">    return &quot;121&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>private_url的地址就是我们想要的图片的地址<h2 id="github有比较完整的例子"><a href="#github有比较完整的例子" class="headerlink" title="github有比较完整的例子"></a>github有比较完整的例子</h2></li>
+</ul>
+<p>想看更详细的例子，<a href="#">戳这里</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> flask </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决跨域问题]]></title>
       <url>/cors/</url>
       <content type="html"><![CDATA[<p>解决跨域请求。使用Flask-CORS就可以解决！</p>
@@ -106,11 +174,11 @@
         
         <tags>
             
-            <tag> bitbucket </tag>
-            
             <tag> python </tag>
             
             <tag> webhooks </tag>
+            
+            <tag> bitbucket </tag>
             
             <tag> 服务器 </tag>
             
@@ -917,35 +985,6 @@ $ git push
     </entry>
     
     <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -978,6 +1017,35 @@ $ git push
         <tags>
             
             <tag> books </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
             
         </tags>
         

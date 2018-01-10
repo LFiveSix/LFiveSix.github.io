@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/Qi_niu/</loc>
+    <lastmod>2018-01-10T06:46:59.730Z</lastmod>
+    <data>
+        <display>
+        <title>用七牛当图片存储仓库！</title>
+        <pubTime>2018-01-10T05:49:48.715Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>flask</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="python" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/cors/</loc>
     <lastmod>2018-01-10T03:04:33.883Z</lastmod>
     <data>
@@ -33,11 +58,11 @@
         <title>Webhooks bitbucket进行服务器自动化部署代码</title>
         <pubTime>2018-01-09T12:47:26.499Z</pubTime>
         
-        <tag>bitbucket</tag>
-         
         <tag>python</tag>
          
         <tag>webhooks</tag>
+         
+        <tag>bitbucket</tag>
          
         <tag>服务器</tag>
          
