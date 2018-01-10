@@ -3,12 +3,44 @@
   
     
     <entry>
+      <title><![CDATA[apscheduler定时任务器]]></title>
+      <url>/apscheduler%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>使用apscheduler定时任务器给爬虫添加定时，让它自动定时爬取！简单的记录下apscheduler的使用！</p>
+<a id="more"></a>
+<h2 id="apscheduler定时任务器"><a href="#apscheduler定时任务器" class="headerlink" title="apscheduler定时任务器"></a>apscheduler定时任务器</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ </span><br><span class="line">pip install APScheduler</span><br></pre></td></tr></table></figure>
+<h3 id="一个小定时器的demo"><a href="#一个小定时器的demo" class="headerlink" title="一个小定时器的demo"></a>一个小定时器的demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from apscheduler.schedulers.blocking import BlockingScheduler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def my_job():</span><br><span class="line">    print (time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;, time.localtime(time.time())))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sched = BlockingScheduler()</span><br><span class="line">    sched.add_job(my_job, &apos;interval&apos;, seconds=5)</span><br><span class="line">    sched.start()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在程序运行5s后开始打印第一次程序运行的时间，然后每隔5s就会继续打印。但是我发现一个问题，如果我的时间设置为一个小时，第一次的程序就会等一个小时才会执行。我就改了一下程序，让第一次立即执行，然后每隔一个小时执行一次。</li>
+<li>更改后的代码如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from apscheduler.schedulers.blocking import BlockingScheduler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def my_job():</span><br><span class="line">    print (time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;, time.localtime(time.time())))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    sched = BlockingScheduler()</span><br><span class="line">    sched.add_job(my_job, &apos;interval&apos;, seconds=5, id=my_job())</span><br><span class="line">    sched.start()</span><br></pre></td></tr></table></figure>
+<p>增加了一个id=my_job()<br>后续还有一些方法的，但是还没学习！</p>
+<h2 id="未完。。。"><a href="#未完。。。" class="headerlink" title="未完。。。"></a>未完。。。</h2>]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> flask </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[用七牛当图片存储仓库！]]></title>
       <url>/Qi_niu/</url>
       <content type="html"><![CDATA[<p>使用七牛作为图床存储图片，语言使用的是python！</p>
 <a id="more"></a>
 <h2 id="用七牛当图片存储仓库！"><a href="#用七牛当图片存储仓库！" class="headerlink" title="用七牛当图片存储仓库！"></a>用七牛当图片存储仓库！</h2><ul>
-<li><a href="https://developer.qiniu.com/kodo/sdk/1242/python" target="_blank" rel="noopener">python官方文档</a></li>
+<li><a href="https://developer.qiniu.com/kodo/sdk/1242/python" target="_blank" rel="noopener">七牛官方SDK</a></li>
 </ul>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
 <li>直接安装</li>
@@ -985,6 +1017,35 @@ $ git push
     </entry>
     
     <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -1017,35 +1078,6 @@ $ git push
         <tags>
             
             <tag> books </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
             
         </tags>
         
