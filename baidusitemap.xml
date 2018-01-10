@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.LFiveSix.com/cors/</loc>
-    <lastmod>2018-01-10T02:54:14.867Z</lastmod>
+    <lastmod>2018-01-10T03:04:33.883Z</lastmod>
     <data>
         <display>
         <title>解决跨域问题</title>
@@ -33,11 +33,11 @@
         <title>Webhooks bitbucket进行服务器自动化部署代码</title>
         <pubTime>2018-01-09T12:47:26.499Z</pubTime>
         
+        <tag>bitbucket</tag>
+         
         <tag>python</tag>
          
         <tag>webhooks</tag>
-         
-        <tag>bitbucket</tag>
          
         <tag>服务器</tag>
          
