@@ -4,6 +4,59 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
+    <lastmod>2018-01-11T05:28:28.456Z</lastmod>
+    <data>
+        <display>
+        <title>Webhooks bitbucket进行服务器自动化部署代码</title>
+        <pubTime>2018-01-09T12:47:26.499Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>webhooks</tag>
+         
+        <tag>bitbucket</tag>
+         
+        <tag>服务器</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
+    <lastmod>2018-01-11T05:28:11.662Z</lastmod>
+    <data>
+        <display>
+        <title>Flask Nginx uwsgi部署服务器</title>
+        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
+        
+        <tag>Flask</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>Uwsgi</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="服务器" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/apscheduler%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2018-01-10T08:40:55.418Z</lastmod>
     <data>
@@ -66,59 +119,6 @@
            
              
               <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
-    <lastmod>2018-01-10T02:19:54.901Z</lastmod>
-    <data>
-        <display>
-        <title>Webhooks bitbucket进行服务器自动化部署代码</title>
-        <pubTime>2018-01-09T12:47:26.499Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>webhooks</tag>
-         
-        <tag>bitbucket</tag>
-         
-        <tag>服务器</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    <lastmod>2018-01-09T11:42:40.448Z</lastmod>
-    <data>
-        <display>
-        <title>Flask Nginx uwsgi部署服务器</title>
-        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
-        
-        <tag>Flask</tag>
-         
-        <tag>Nginx</tag>
-         
-        <tag>Uwsgi</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="服务器" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
           
         </display>
     </data>

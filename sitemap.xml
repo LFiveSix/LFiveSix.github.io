@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
+    
+    <lastmod>2018-01-11T05:28:28.456Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
+    
+    <lastmod>2018-01-11T05:28:11.662Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/apscheduler%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2018-01-10T08:40:55.418Z</lastmod>
@@ -19,20 +33,6 @@
     <loc>http://www.LFiveSix.com/cors/</loc>
     
     <lastmod>2018-01-10T03:04:33.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
-    
-    <lastmod>2018-01-10T02:19:54.901Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    
-    <lastmod>2018-01-09T11:42:40.448Z</lastmod>
     
   </url>
   
