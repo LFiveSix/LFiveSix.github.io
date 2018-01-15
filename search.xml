@@ -309,6 +309,23 @@
 <ul>
 <li>注：2d只适合两点间距离不是很远的情况下，距离近经纬网可以看成平面直角坐标系，距离大了以后随着地球曲率的影响，这样的计算就不准确了，就应该使用2dsphere</li>
 </ul>
+<h2 id="2dsphere索引"><a href="#2dsphere索引" class="headerlink" title="2dsphere索引"></a>2dsphere索引</h2><h3 id="创建索引-1"><a href="#创建索引-1" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.d.ensureIndex(&#123;location:”2dsphere”&#125;)</span><br></pre></td></tr></table></figure>
+<p>在2dsphere索引中，位置的表示方式不再是[经度，纬度]，它的表示方式叫做GeoJSON，GeoJSON的写法为：{type:”Point/LineString/Polygon”,coordinates:[经度,纬度]，其中type字段表示当前坐标是一个点的坐标还是一条线或者一个多边形的；coordinates字段则表示当前位置的坐标——如果是一个点，那就是该点的经度维度、如果是一条线，则是线起点与终点的坐标、如果是多边形，则是多边形各个顶点的坐标。需要注意的是，使用2dsphere索引的数据中必须有GeoJSON字段<br>参考<a href="http://www.mongoing.com/mongodb-geo-index-1/" target="_blank" rel="noopener">这里</a></p>
+<ul>
+<li>分别下载示例数据集：neighborhoods和restaurant。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://raw.githubusercontent.com/mongodb/docs-assets/geospatial/neighborhoods.json</span><br><span class="line">$ wget https://raw.githubusercontent.com/mongodb/docs-assets/geospatial/restaurants.json</span><br></pre></td></tr></table></figure>
+<ul>
+<li>它们分别包括了邻居和饭店的集合。</li>
+</ul>
+<h3 id="geoIntersects"><a href="#geoIntersects" class="headerlink" title="$geoIntersects"></a>$geoIntersects</h3><ul>
+<li>提供一个用户非常精确的位置，那么使用 $geoIntersects 来找到用户当前所在的居民区就是非常容易的了。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.neighborhoods.findOne(&#123; geometry: &#123; <span class="variable">$geoIntersects</span>: &#123; <span class="variable">$geometry</span>: &#123; <span class="built_in">type</span>: <span class="string">"Point"</span>, coordinates: [ -73.93414657, 40.82302903 ] &#125; &#125; &#125; &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="nearSphere"><a href="#nearSphere" class="headerlink" title="$nearSphere"></a>$nearSphere</h3><ul>
+<li>由近及远的返回 location 该地点5公里以内的5个地点。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locations = db.locations.find(&#123;<span class="string">"location"</span>: &#123;<span class="string">"<span class="variable">$nearSphere</span>"</span>: &#123;<span class="string">"<span class="variable">$geometry</span>"</span>: &#123;<span class="string">"type"</span>: <span class="string">"Point"</span>, <span class="string">"coordinates"</span>: conduct_str2float(point)&#125;, <span class="string">"<span class="variable">$maxDistance</span>"</span>: 5 * 1609.34&#125;&#125;&#125;).<span class="built_in">limit</span>(5)</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -656,6 +673,8 @@
 <h3 id="列出目前所有的正在内存中的程序"><a href="#列出目前所有的正在内存中的程序" class="headerlink" title="列出目前所有的正在内存中的程序"></a>列出目前所有的正在内存中的程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
 <h3 id="编辑文件内容的小操作"><a href="#编辑文件内容的小操作" class="headerlink" title="编辑文件内容的小操作"></a>编辑文件内容的小操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ G：直接跳转到文件的底部</span><br><span class="line">$ gg: 跳转到文件首</span><br><span class="line">$ 0: 跳转到行首。</span><br><span class="line">$ $: 跳转到行尾。</span><br><span class="line">$ <span class="comment">#：跳转到该行的第#个位置。</span></span><br><span class="line">$ :<span class="comment">#：跳转到#行。</span></span><br><span class="line">$ /： 输入关键字，发现不是要找的，直接在按n，向后查找直到找到为止。</span><br><span class="line">$ ?： 输入关键字，发现不是要找的，直接在按n，向前查找直到找到为止。</span><br></pre></td></tr></table></figure>
 <h3 id="列出当前用户组"><a href="#列出当前用户组" class="headerlink" title="列出当前用户组"></a>列出当前用户组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ll</span><br></pre></td></tr></table></figure>
+<h3 id="找出当前目录下-2-天内新创建的所有-json-文件"><a href="#找出当前目录下-2-天内新创建的所有-json-文件" class="headerlink" title="找出当前目录下 2 天内新创建的所有 json 文件"></a>找出当前目录下 2 天内新创建的所有 json 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  find ./ -<span class="built_in">type</span> f –name ‘*.json’-ctime -2</span><br></pre></td></tr></table></figure>
+<h3 id="查看系统某个端口是否已经被其他程序占用"><a href="#查看系统某个端口是否已经被其他程序占用" class="headerlink" title="查看系统某个端口是否已经被其他程序占用"></a>查看系统某个端口是否已经被其他程序占用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsof –i:端口号  或者   netstat –anp | grep 端口号</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -1017,6 +1036,39 @@ $ git push
     </entry>
     
     <entry>
+      <title><![CDATA[观影史]]></title>
+      <url>/movies/</url>
+      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
+<a id="more"></a>
+<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>男儿本色 （11.23） </li>
+<li>大话西游（我女神朱茵）（11.25） </li>
+<li>空天猎（11.26）</li>
+<li>救火英雄（12.03）</li>
+<li>逃出生天（12.06）</li>
+<li>拆弹专家（1.10）</li>
+<li>解忧杂货铺（1.1）</li>
+<li>妖铃铃（1.1）</li>
+<li>夏洛特的烦恼（1.13）</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 观影清单 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> movies </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[读书清单]]></title>
       <url>/books/</url>
       <content type="html"><![CDATA[<p>最近一段时间特别喜欢看书，无论技术还是非技术的，感到自己的认知是多么的渺小，上学的时候没有多读书真是一大罪过，在这做个读书记录吧，也可以在每过一段时间后回头看看自己有没有成长，成长了多少。</p>
@@ -1026,6 +1078,7 @@ $ git push
 <li>python web 开发实战  </li>
 <li>python 核心编程（第三版） </li>
 <li>代码大全（第二版）</li>
+<li>python 数据挖掘（1.10-）</li>
 </ul>
 <h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><p>2017</p>
 <ul>
@@ -1049,35 +1102,6 @@ $ git push
         <tags>
             
             <tag> books </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[观影史]]></title>
-      <url>/movies/</url>
-      <content type="html"><![CDATA[<p>成长是需要记录的，自己为自己记录一下成长的过程吧</p>
-<a id="more"></a>
-<h2 id="观影史"><a href="#观影史" class="headerlink" title="观影史"></a>观影史</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
-<li>男儿本色 （11.23） </li>
-<li>大话西游（我女神朱茵）（11.25） </li>
-<li>空天猎（11.26）</li>
-<li>救火英雄（12.03）</li>
-<li>逃出生天（12.06）</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 观影清单 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> movies </tag>
             
         </tags>
         
