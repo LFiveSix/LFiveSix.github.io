@@ -5,20 +5,46 @@
     <entry>
       <title><![CDATA[Linux top命令及CPU信息详解]]></title>
       <url>/linux_top/</url>
-      <content type="html"><![CDATA[<p>记录一些python的零散知识点！</p>
-<a id="more"></a>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="Str-转-dict"><a href="#Str-转-dict" class="headerlink" title="Str 转 dict"></a>Str 转 dict</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ A = <span class="built_in">eval</span>(B)</span><br></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<p>top命令是linux的性能分析工具，可以实时的显示各个进程的资源占用情况，类似Windows的任务管理器。退出top的命令是q<br><a id="more"></a></p>
+<h2 id="top信息详解"><a href="#top信息详解" class="headerlink" title="top信息详解"></a>top信息详解</h2><p><img src="http://ongsui5u0.bkt.clouddn.com/WechatIMG235.jpeg" alt=""></p>
+<h3 id="第一部分信息"><a href="#第一部分信息" class="headerlink" title="第一部分信息"></a>第一部分信息</h3><p>第一行  </p>
 <ul>
-<li>eg:</li>
+<li>121 total，为当前系统进程总数  </li>
+<li>1 running，为当前运行中的进程数  </li>
+<li>120 sleeping，为当前处于等待的进程数  </li>
+<li>0 stopped，为被停止的系统进程数  </li>
+<li>0 zombie，为被复原的系统进程数<br>第二行  </li>
+<li>11:08:19，为系统当前时刻  </li>
+<li>73 days，为系统启动到现在运行的时间  </li>
+<li>1 user，为当前登录到系统的用户，更确切的说是登录到用户的终端数 – 同一个用户同一时间对系统多个终端的连接将被视为多个用户连接到系统，这里的用户数也将表现为终端的数目  </li>
+<li>load average，为当前系统负载的平均值，后面的三个值分别为1分钟前、5分钟前、15分钟前进程的平均数，一般的可以认为这个数值超过 CPU 数目时，CPU 将比较吃力的负载当前系统所包含的进程<br>第三行%Cpu(s)  </li>
+<li>0.8 us,用户空间占cpu的百分比  </li>
+<li>0.0 sy,内核空间占CPU百分比  </li>
+<li>0.0 ni,用户进程空间内改变过优先级的进程占用CPU百分比  </li>
+<li>99.2 id,空闲CPU的百分比  </li>
+<li>0.0 wa,cpu等待磁盘写入完成时间  </li>
+<li>0.0 hi,硬终端消耗时间  </li>
+<li>0.0 si,软终端消耗时间  </li>
+<li>0.0 st,虚拟机偷取时间<br>第四行KiB Mem  </li>
+<li>total,内存总量  </li>
+<li>used,当前使用量  </li>
+<li>free,当前空闲量  </li>
+<li>buff/cache,缓冲使用中的内存量</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ A = <span class="built_in">eval</span>(B)</span><br><span class="line">$ eg: user = <span class="string">"&#123;'name' : 'jim', 'sex' : 'male', 'age': 18&#125;"</span></span><br><span class="line">$ b=<span class="built_in">eval</span>(user)</span><br><span class="line">$ &gt;&gt;&gt; b</span><br><span class="line">$ &#123;<span class="string">'age'</span>: 18, <span class="string">'name'</span>: <span class="string">'jim'</span>, <span class="string">'sex'</span>: <span class="string">'male'</span>&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="整理dict"><a href="#整理dict" class="headerlink" title="整理dict"></a>整理dict</h3><ul>
-<li>将凌乱的字典转换成带缩进的，树状的效果，用以下的方法：</li>
+<h3 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h3><ul>
+<li>PID 进程ID  </li>
+<li>USER 进程所有者的用户名  </li>
+<li>PR 任务优先级  </li>
+<li>NI nice值，数值越小优先级越高，数值越大优先级越低  </li>
+<li>VIRT 进程使用的虚拟内存总量，单位：kb，VIRT=SWAP+RES   </li>
+<li>RES 进程使用的、未被换出的物理内存大小，单位：kb。RES=CODE+DATA  </li>
+<li>SHR 共享内存大小，单位：kb  </li>
+<li>S 进程状态，D不可中断的睡眠状态，R运行，S睡眠，T跟踪/停止，z僵尸进程  </li>
+<li>%CPU 上次更新到现在的 CPU 时间占用百分比  </li>
+<li>TIME+ 进程使用的 CPU 时间总计，精确到 1/100 秒  </li>
+<li>COMMAND 命令名 / 命令行</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">jsonDumpsIndentStr = json.dumps(demoDictList, indent=1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"jsonDumpsIndentStr="</span>, jsonDumpsIndentStr)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加indent=1，就会变成带缩进的，树状的效果，没有的话就是紧凑型的！</li>
-</ul>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>q -退出top</p>
 ]]></content>
       
         <categories>
@@ -369,7 +395,7 @@
         
         <tags>
             
-            <tag> MongonDB </tag>
+            <tag> MongoDB </tag>
             
         </tags>
         
