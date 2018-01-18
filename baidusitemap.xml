@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/Webbench/</loc>
+    <lastmod>2018-01-18T07:52:29.423Z</lastmod>
+    <data>
+        <display>
+        <title>网站压力测试工具Webbench</title>
+        <pubTime>2018-01-18T07:52:29.423Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-01-18T02:29:32.616Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 基本命令</title>
+        <pubTime>2017-11-23T16:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/linux_top/</loc>
     <lastmod>2018-01-16T04:17:25.355Z</lastmod>
     <data>
@@ -238,26 +278,6 @@
            
              
               <breadCrumb title="观影清单" url="http://www.LFiveSix.com/categories/%E8%A7%82%E5%BD%B1%E6%B8%85%E5%8D%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/Linux%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-01-15T04:00:54.527Z</lastmod>
-    <data>
-        <display>
-        <title>Linux 基本命令</title>
-        <pubTime>2017-11-23T16:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>

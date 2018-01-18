@@ -3,6 +3,125 @@
   
     
     <entry>
+      <title><![CDATA[网站压力测试工具Webbench]]></title>
+      <url>/Webbench/</url>
+      <content type="html"><![CDATA[<p>Webbench非常简单的网站压力测试工具。它使用fork()模拟多个客户端同时访问我们设定的url，webbench的标准测试可以向我们展示服务器的两项内容：每秒钟相应请求数和每秒钟传输数据量。Webbench最多可以模拟3万个并发连接去测试网站的负载能力。(据说是这样的)<br><a id="more"></a></p>
+<h2 id="Webbench"><a href="#Webbench" class="headerlink" title="Webbench"></a>Webbench</h2><h3 id="安装Webbench"><a href="#安装Webbench" class="headerlink" title="安装Webbench"></a>安装Webbench</h3><ul>
+<li><a href="home.tiscali.cz/~cz210552/webbench_cz.html">官方网址</a>  </li>
+<li><a href="scali.cz/~cz210552/distfiles/webbench-1.5.tar.gz">下载地址</a></li>
+<li>以下均在ubuntu16.04下操作</li>
+</ul>
+<p>下载远程webbench文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://home.tiscali.cz/~cz210552/distfiles/webbench-1.5.tar.gz</span><br></pre></td></tr></table></figure>
+<p>tar解压要编译的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf webbench-1.5.tar.gz</span><br></pre></td></tr></table></figure>
+<p>编译与安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> webbench-1.5</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h3 id="Webbench的使用"><a href="#Webbench的使用" class="headerlink" title="Webbench的使用"></a>Webbench的使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webbench -c 1000 -t 10 http://www.baidu.com</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参数说明：-c表示并发数 -t表示时间（秒） baidu：目标url,注意url的格式  </li>
+<li>测试结果示例</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Webbench - Simple Web Benchmark 1.5</span><br><span class="line">Copyright (c) Radim Kolar 1997-2004, GPL Open Source Software.</span><br><span class="line"></span><br><span class="line">Benchmarking: GET http://www.baidu.com/</span><br><span class="line">1000 clients, running 10 sec.</span><br><span class="line"></span><br><span class="line">Speed=8202 pages/min, 15556389 bytes/sec.</span><br><span class="line">Requests: 1341 susceed, 26 failed.</span><br></pre></td></tr></table></figure>
+<h3 id="详细的参数使用说明"><a href="#详细的参数使用说明" class="headerlink" title="详细的参数使用说明"></a>详细的参数使用说明</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">短参数</th>
+<th style="text-align:center">长参数</th>
+<th style="text-align:right">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:center">–force</td>
+<td style="text-align:right">不需要等待服务器响应</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:center">–reload</td>
+<td style="text-align:right">发送重新加载请求</td>
+</tr>
+<tr>
+<td style="text-align:left">-t</td>
+<td style="text-align:center">–time</td>
+<td style="text-align:right">运行多长时间，单位：秒</td>
+</tr>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:center">–proxy server:port</td>
+<td style="text-align:right">使用代理服务器来发送请求</td>
+</tr>
+<tr>
+<td style="text-align:left">-c</td>
+<td style="text-align:center">–clients</td>
+<td style="text-align:right">创建多少个客户端，默认1个</td>
+</tr>
+<tr>
+<td style="text-align:left">-9</td>
+<td style="text-align:center">–http09</td>
+<td style="text-align:right">使用 HTTP/0.9</td>
+</tr>
+<tr>
+<td style="text-align:left">-1</td>
+<td style="text-align:center">–http10</td>
+<td style="text-align:right">使用 HTTP/1.0 协议</td>
+</tr>
+<tr>
+<td style="text-align:left">-2</td>
+<td style="text-align:center">–http11</td>
+<td style="text-align:right">使用 HTTP/1.1 协议</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">–get</td>
+<td style="text-align:right">使用 GET请求方法</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">–head</td>
+<td style="text-align:right">使用 HEAD请求方法</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">–options</td>
+<td style="text-align:right">使用 OPTIONS请求方法</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">–trace</td>
+<td style="text-align:right">使用 TRACE请求方法</td>
+</tr>
+<tr>
+<td style="text-align:left">-?/-h</td>
+<td style="text-align:center">–help</td>
+<td style="text-align:right">打印帮助信息</td>
+</tr>
+<tr>
+<td style="text-align:left">-V</td>
+<td style="text-align:center">–version</td>
+<td style="text-align:right">显示版本号</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Linux top命令及CPU信息详解]]></title>
       <url>/linux_top/</url>
       <content type="html"><![CDATA[<p>top命令是linux的性能分析工具，可以实时的显示各个进程的资源占用情况，类似Windows的任务管理器。退出top的命令是q<br><a id="more"></a></p>
@@ -733,6 +852,11 @@
 <h3 id="列出当前用户组"><a href="#列出当前用户组" class="headerlink" title="列出当前用户组"></a>列出当前用户组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ll</span><br></pre></td></tr></table></figure>
 <h3 id="找出当前目录下-2-天内新创建的所有-json-文件"><a href="#找出当前目录下-2-天内新创建的所有-json-文件" class="headerlink" title="找出当前目录下 2 天内新创建的所有 json 文件"></a>找出当前目录下 2 天内新创建的所有 json 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  find ./ -<span class="built_in">type</span> f –name ‘*.json’-ctime -2</span><br></pre></td></tr></table></figure>
 <h3 id="查看系统某个端口是否已经被其他程序占用"><a href="#查看系统某个端口是否已经被其他程序占用" class="headerlink" title="查看系统某个端口是否已经被其他程序占用"></a>查看系统某个端口是否已经被其他程序占用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsof –i:端口号  或者   netstat –anp | grep 端口号</span><br></pre></td></tr></table></figure>
+<h2 id="Linux-查看文件夹和文件大小"><a href="#Linux-查看文件夹和文件大小" class="headerlink" title="Linux 查看文件夹和文件大小"></a>Linux 查看文件夹和文件大小</h2><h3 id="查看目前所有文件系统的可用空间以及使用状况"><a href="#查看目前所有文件系统的可用空间以及使用状况" class="headerlink" title="查看目前所有文件系统的可用空间以及使用状况"></a>查看目前所有文件系统的可用空间以及使用状况</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ df -h</span><br></pre></td></tr></table></figure>
+<h3 id="查看文件和文件夹的使用情况"><a href="#查看文件和文件夹的使用情况" class="headerlink" title="查看文件和文件夹的使用情况"></a>查看文件和文件夹的使用情况</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ du -h --max-depth=1 your_dest_dir</span><br></pre></td></tr></table></figure>
+<ul>
+<li>your_dest_dir是文件名或者文件路径</li>
+</ul>
 ]]></content>
       
         <categories>
@@ -745,6 +869,32 @@
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在windows下用ls]]></title>
+      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
+      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
+<a id="more"></a>
+<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
+<pre><code class="bash">@<span class="built_in">echo</span> off  
+dir
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
         
@@ -783,32 +933,6 @@ $ brew list (已经不存在 mongodb)
             <tag> mac </tag>
             
             <tag> MongoDB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在windows下用ls]]></title>
-      <url>/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</url>
-      <content type="html"><![CDATA[<p>用惯了linux下的ls，windows下没有ls，列出目录列表是dir，把dir改成ls</p>
-<a id="more"></a>
-<h2 id="在windows下用ls"><a href="#在windows下用ls" class="headerlink" title="在windows下用ls"></a>在windows下用ls</h2><h3 id="一步操作就可以搞定"><a href="#一步操作就可以搞定" class="headerlink" title="一步操作就可以搞定"></a>一步操作就可以搞定</h3><p>在C:\Windows 新建一个ls.bat文件夹，输入如下内容</p>
-<pre><code class="bash">@<span class="built_in">echo</span> off  
-dir
-</code></pre>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> windows </tag>
             
         </tags>
         
