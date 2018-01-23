@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.LFiveSix.com/jieba/</loc>
+    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
     
-    <lastmod>2018-01-23T08:12:20.759Z</lastmod>
+    <lastmod>2018-01-23T08:52:18.356Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
+    
+    <lastmod>2018-01-23T08:52:02.343Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/bitbucket/</loc>
+    
+    <lastmod>2018-01-23T08:51:47.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/Qi_niu/</loc>
+    
+    <lastmod>2018-01-23T08:51:01.478Z</lastmod>
     
   </url>
   
@@ -44,23 +65,9 @@
   </url>
   
   <url>
-    <loc>http://www.LFiveSix.com/Qi_niu/</loc>
-    
-    <lastmod>2018-01-16T03:15:05.716Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.LFiveSix.com/cors/</loc>
     
     <lastmod>2018-01-16T03:15:04.801Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/Pycharm%20Webhooks%20bitbucket/</loc>
-    
-    <lastmod>2018-01-16T03:15:03.840Z</lastmod>
     
   </url>
   
@@ -75,13 +82,6 @@
     <loc>http://www.LFiveSix.com/mac%E5%AE%89%E8%A3%85mongodb/</loc>
     
     <lastmod>2018-01-16T03:14:56.818Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    
-    <lastmod>2018-01-16T01:45:19.025Z</lastmod>
     
   </url>
   
@@ -138,13 +138,6 @@
     <loc>http://www.LFiveSix.com/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</loc>
     
     <lastmod>2017-11-27T15:01:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/bitbucket/</loc>
-    
-    <lastmod>2017-11-27T14:48:07.000Z</lastmod>
     
   </url>
   
