@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/jieba/</loc>
+    
+    <lastmod>2018-01-29T05:52:26.934Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/Python_spider/</loc>
+    
+    <lastmod>2018-01-29T05:51:50.002Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.LFiveSix.com/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
+    
+    <lastmod>2018-01-23T09:32:26.912Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
     
     <lastmod>2018-01-23T08:52:18.356Z</lastmod>
@@ -145,13 +166,6 @@
     <loc>http://www.LFiveSix.com/%E5%9C%A8windows%E4%B8%8B%E7%94%A8ls/</loc>
     
     <lastmod>2017-11-27T14:48:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
-    
-    <lastmod>2017-11-25T16:15:15.000Z</lastmod>
     
   </url>
   

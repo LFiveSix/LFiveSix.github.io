@@ -17,14 +17,18 @@
 
 
 
+<meta name="description" content="title: 使用jieba中文分词data:tags:    pythoncategories:   自用笔记     使用jieba分词，实现较准确搜索。">
 <meta name="keywords" content="python,mac,ubuntu 安装MongoDB,MongoDB的基本使用,bitbucket,mac 安装MongoDB,Linux 基本命令,在windows下用ls">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="LFiveSix&#39;s Blog">
-<meta property="og:url" content="http://www.LFiveSix.com/categories/mac的小操作/index.html">
+<meta property="og:url" content="http://www.LFiveSix.com/jieba/index.html">
 <meta property="og:site_name" content="LFiveSix&#39;s Blog">
+<meta property="og:description" content="title: 使用jieba中文分词data:tags:    pythoncategories:   自用笔记     使用jieba分词，实现较准确搜索。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-29T05:52:26.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LFiveSix&#39;s Blog">
+<meta name="twitter:description" content="title: 使用jieba中文分词data:tags:    pythoncategories:   自用笔记     使用jieba分词，实现较准确搜索。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Category: mac的小操作 | LFiveSix&#39;s Blog</title>
+<title>LFiveSix&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,10 +71,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
-        isCategory: true,
+        isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: false
@@ -219,60 +223,209 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-jieba" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/解决办法/" class="archive-article-date">
-      <time datetime="2017-11-25T16:00:00.000Z" itemprop="datePublished">11-26</time>
+    <div class="article-meta">
+      <a href="/jieba/" class="article-date">
+      <time datetime="2018-01-19T03:23:54.584Z" itemprop="datePublished">2018-01-19</time>
 </a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/解决办法/">mac自带邮件不能登录163邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/mac的小操作/">mac的小操作</a>
     </div>
-
-
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+        <p>title: 使用jieba中文分词<br>data:<br>tags:  </p>
+<ul>
+<li>python<br>categories:  </li>
+<li>自用笔记  </li>
+</ul>
+<hr>
+<p>使用jieba分词，实现较准确搜索。</p>
+<a id="more"></a>
+<h2 id="jieba"><a href="#jieba" class="headerlink" title="jieba"></a>jieba</h2><ul>
+<li>支持三种分词模式：  <ul>
+<li>精确模式，试图将句子最精确地切开，适合文本分析；  </li>
+<li>全模式，把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；  </li>
+<li>搜索引擎模式，在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。  </li>
+</ul>
+</li>
+<li>支持繁体分词  </li>
+<li>支持自定义词典  </li>
+<li>MIT 授权协议</li>
+</ul>
+<h3 id="安装jieba"><a href="#安装jieba" class="headerlink" title="安装jieba"></a>安装jieba</h3><ul>
+<li>python2/3 都兼容  </li>
+<li><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">github</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install jieba</span><br><span class="line">pip3 install jieba</span><br></pre></td></tr></table></figure>
+      
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/jieba/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">LFiveSix</a></p>
+        <p><span>发布时间:</span>2018-01-19, 11:23:54</p>
+        <p><span>最后更新:</span>2018-01-29, 13:52:26</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/jieba/" title="">http://www.LFiveSix.com/jieba/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.LFiveSix.com/jieba/　　作者: LFiveSix" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/Python_spider/">
+                    Python爬虫的基础知识
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/Webbench/">
+                    网站压力测试工具Webbench
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jieba"><span class="toc-number">1.</span> <span class="toc-text">jieba</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jieba"><span class="toc-number">1.1.</span> <span class="toc-text">安装jieba</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
 
     
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| LFiveSix's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2149770';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/Python_spider/" title="上一篇: Python爬虫的基础知识">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/Webbench/" title="下一篇: 网站压力测试工具Webbench">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Python_spider/">Python爬虫的基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/jieba/">jieba</a></li><li class="post-list-item"><a class="post-list-link" href="/Webbench/">网站压力测试工具Webbench</a></li><li class="post-list-item"><a class="post-list-link" href="/linux_top/">Linux top命令及CPU信息详解</a></li><li class="post-list-item"><a class="post-list-link" href="/apscheduler定时任务器/">apscheduler定时任务器</a></li><li class="post-list-item"><a class="post-list-link" href="/Qi_niu/">用七牛当图片存储仓库！</a></li><li class="post-list-item"><a class="post-list-link" href="/cors/">解决跨域问题</a></li><li class="post-list-item"><a class="post-list-link" href="/Pycharm Webhooks bitbucket/">Webhooks bitbucket进行服务器自动化部署代码</a></li><li class="post-list-item"><a class="post-list-link" href="/knowledge_point/">python的零散的小知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb index/">mongodb地理位置索引</a></li><li class="post-list-item"><a class="post-list-link" href="/uwsgi nginx flask/">Flask Nginx uwsgi部署服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/use pycharm/">pycharm的使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu 安装MongoDB/">ubuntu 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb的基本使用方法/">MongoDB的基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/解决办法/">mac自带邮件不能登录163邮箱</a></li><li class="post-list-item"><a class="post-list-link" href="/Linux最基本的命令/">Linux 基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/mac安装mongodb/">mac 安装MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/在windows下用ls/">在windows下用ls</a></li><li class="post-list-item"><a class="post-list-link" href="/bitbucket/">bitbucket</a></li><li class="post-list-item"><a class="post-list-link" href="/visit/">走在全栈的路上</a></li><li class="post-list-item"><a class="post-list-link" href="/building_blog/">hexo + github 搭建个人博客！</a></li><li class="post-list-item"><a class="post-list-link" href="/修改mac终端前缀/">修改mac终端命令行前缀的显示内容</a></li><li class="post-list-item"><a class="post-list-link" href="/movies/">观影史</a></li><li class="post-list-item"><a class="post-list-link" href="/books/">读书清单</a></li><li class="post-list-item"><a class="post-list-link" href="/markdown/">Markdown语法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
