@@ -4,6 +4,68 @@
 
     
   <url>
+    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
+    <lastmod>2018-02-26T06:01:00.439Z</lastmod>
+    <data>
+        <display>
+        <title>Flask Nginx uwsgi部署服务器</title>
+        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
+        
+        <tag>Flask</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>Uwsgi</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="服务器" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/visit/</loc>
+    <lastmod>2018-02-26T06:00:11.904Z</lastmod>
+    <data>
+        <display>
+        <title>走在全栈的路上</title>
+        <pubTime>2017-11-14T16:04:24.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.LFiveSix.com/mac%E8%A7%A3%E5%8E%8Brar%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-02-02T03:25:54.168Z</lastmod>
+    <data>
+        <display>
+        <title>mac下解压rar文件</title>
+        <pubTime>2018-01-31T16:00:00.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.LFiveSix.com/jieba/</loc>
     <lastmod>2018-01-29T06:01:03.654Z</lastmod>
     <data>
@@ -57,33 +119,6 @@
            
              
               <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
-    <lastmod>2018-01-23T08:52:18.356Z</lastmod>
-    <data>
-        <display>
-        <title>Flask Nginx uwsgi部署服务器</title>
-        <pubTime>2017-12-07T08:55:02.000Z</pubTime>
-        
-        <tag>Flask</tag>
-         
-        <tag>Nginx</tag>
-         
-        <tag>Uwsgi</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
-          
-             
-              <breadCrumb title="服务器" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
           
         </display>
     </data>
@@ -408,21 +443,6 @@
              
               <breadCrumb title="自用笔记" url="http://www.LFiveSix.com/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.LFiveSix.com/visit/</loc>
-    <lastmod>2017-12-08T03:59:57.136Z</lastmod>
-    <data>
-        <display>
-        <title>走在全栈的路上</title>
-        <pubTime>2017-11-14T16:04:24.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
