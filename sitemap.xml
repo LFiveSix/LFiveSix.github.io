@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.LFiveSix.com/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-03-12T06:21:23.768Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.LFiveSix.com/uwsgi%20nginx%20flask/</loc>
     
     <lastmod>2018-02-26T06:01:00.439Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>http://www.LFiveSix.com/movies/</loc>
     
     <lastmod>2018-01-15T04:03:18.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.LFiveSix.com/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2017-12-27T03:39:11.887Z</lastmod>
     
   </url>
   

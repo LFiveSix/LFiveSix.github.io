@@ -827,59 +827,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MongoDB的基本使用]]></title>
-      <url>/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>记录下mongodb的基本使用方法，积累记录！</p>
-<a id="more"></a>
-<h2 id="mongodb的基本使用方法"><a href="#mongodb的基本使用方法" class="headerlink" title="mongodb的基本使用方法"></a>mongodb的基本使用方法</h2><h3 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
-<h3 id="输入mongo进入shell命令行"><a href="#输入mongo进入shell命令行" class="headerlink" title="输入mongo进入shell命令行"></a>输入mongo进入shell命令行</h3><h3 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show dbs</span><br></pre></td></tr></table></figure>
-<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ use ****</span><br></pre></td></tr></table></figure>
-<h3 id="查看该数据库下的集合"><a href="#查看该数据库下的集合" class="headerlink" title="查看该数据库下的集合"></a>查看该数据库下的集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show collections</span><br></pre></td></tr></table></figure>
-<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.createCollection(<span class="string">"***"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.insert(&#123;<span class="string">"1"</span>: <span class="string">"2"</span>&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注：如果没有该集合会自动创建集合</li>
-</ul>
-<h2 id="删-除"><a href="#删-除" class="headerlink" title="删 除"></a>删 除</h2><h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.remove(&#123;文档内容&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 切换到该数据库下，输入db.dropDatabase()</span><br></pre></td></tr></table></figure>
-<h3 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.drop()</span><br></pre></td></tr></table></figure>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="查询集合"><a href="#查询集合" class="headerlink" title="查询集合"></a>查询集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find()</span><br></pre></td></tr></table></figure>
-<h3 id="查询前N项数据"><a href="#查询前N项数据" class="headerlink" title="查询前N项数据"></a>查询前N项数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
-<h3 id="从第n项开始查询"><a href="#从第n项开始查询" class="headerlink" title="从第n项开始查询"></a>从第n项开始查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().skip(N)</span><br></pre></td></tr></table></figure>
-<h3 id="统计集合中数据数量"><a href="#统计集合中数据数量" class="headerlink" title="统计集合中数据数量"></a>统计集合中数据数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.count()</span><br></pre></td></tr></table></figure>
-<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db geo --collection geo --drop --file /lizw/beijing.json</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注：原集合存在会删除原有集合</li>
-</ul>
-<h3 id="导入数据，数据格式为csv"><a href="#导入数据，数据格式为csv" class="headerlink" title="导入数据，数据格式为csv"></a>导入数据，数据格式为csv</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db d --collection c --<span class="built_in">type</span> csv --headerline --file /Users/li/mcld/shuju.csv</span><br></pre></td></tr></table></figure>
-<ul>
-<li>–db 数据库名称  </li>
-<li>–collection 集合名称  </li>
-<li>–headerline：这个参数很重要，加上这个参数后创建完成后的内容会以 CSV 第一行的内容为字段名  </li>
-<li>–file Users/li/mcld/shuju.csv：这里就是 csv 文件的路径了。</li>
-</ul>
-<h3 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoexport -d lianjia -c zufang_location -o /Users/lzw/li.josn</span><br></pre></td></tr></table></figure>
-<ul>
-<li>mongoexport -d db -c collection -o /Users/lzw/li.josn(文件位置及文件名称)   </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 自用笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MongoDB </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[ubuntu 安装MongoDB]]></title>
       <url>/ubuntu%20%E5%AE%89%E8%A3%85MongoDB/</url>
       <content type="html"><![CDATA[<p>ubuntu (16.04)下使用mongodb</p>
@@ -913,6 +860,60 @@
             <tag> MongoDB </tag>
             
             <tag> ubuntu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MongoDB的基本使用]]></title>
+      <url>/mongodb%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>记录下mongodb的基本使用方法，积累记录！</p>
+<a id="more"></a>
+<h2 id="mongodb的基本使用方法"><a href="#mongodb的基本使用方法" class="headerlink" title="mongodb的基本使用方法"></a>mongodb的基本使用方法</h2><h3 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service mongod start</span><br></pre></td></tr></table></figure>
+<h3 id="输入mongo进入shell命令行"><a href="#输入mongo进入shell命令行" class="headerlink" title="输入mongo进入shell命令行"></a>输入mongo进入shell命令行</h3><h3 id="展示数据库"><a href="#展示数据库" class="headerlink" title="展示数据库"></a>展示数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show dbs</span><br></pre></td></tr></table></figure>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ use ****</span><br></pre></td></tr></table></figure>
+<h3 id="查看该数据库下的集合"><a href="#查看该数据库下的集合" class="headerlink" title="查看该数据库下的集合"></a>查看该数据库下的集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ show collections</span><br></pre></td></tr></table></figure>
+<h3 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.createCollection(<span class="string">"***"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="插入文档"><a href="#插入文档" class="headerlink" title="插入文档"></a>插入文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.insert(&#123;<span class="string">"1"</span>: <span class="string">"2"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：如果没有该集合会自动创建集合</li>
+</ul>
+<h2 id="删-除"><a href="#删-除" class="headerlink" title="删 除"></a>删 除</h2><h3 id="删除文档"><a href="#删除文档" class="headerlink" title="删除文档"></a>删除文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.remove(&#123;文档内容&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 切换到该数据库下，输入db.dropDatabase()</span><br></pre></td></tr></table></figure>
+<h3 id="删除集合"><a href="#删除集合" class="headerlink" title="删除集合"></a>删除集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.drop()</span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="查询集合"><a href="#查询集合" class="headerlink" title="查询集合"></a>查询集合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find()</span><br></pre></td></tr></table></figure>
+<h3 id="查询前N项数据"><a href="#查询前N项数据" class="headerlink" title="查询前N项数据"></a>查询前N项数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().<span class="built_in">limit</span>(n)</span><br></pre></td></tr></table></figure>
+<h3 id="从第n项开始查询"><a href="#从第n项开始查询" class="headerlink" title="从第n项开始查询"></a>从第n项开始查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.find().skip(N)</span><br></pre></td></tr></table></figure>
+<h3 id="统计集合中数据数量"><a href="#统计集合中数据数量" class="headerlink" title="统计集合中数据数量"></a>统计集合中数据数量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ db.collection.count()</span><br></pre></td></tr></table></figure>
+<h3 id="导入数据，数据格式为data-json"><a href="#导入数据，数据格式为data-json" class="headerlink" title="导入数据，数据格式为data.json"></a>导入数据，数据格式为data.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db geo --collection geo --drop --file /lizw/beijing.json</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注：原集合存在会删除原有集合</li>
+</ul>
+<h3 id="导入数据，数据格式为csv"><a href="#导入数据，数据格式为csv" class="headerlink" title="导入数据，数据格式为csv"></a>导入数据，数据格式为csv</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoimport --db d --collection c --<span class="built_in">type</span> csv --headerline --file /Users/li/mcld/shuju.csv</span><br></pre></td></tr></table></figure>
+<ul>
+<li>–db 数据库名称  </li>
+<li>–collection 集合名称  </li>
+<li>–headerline：这个参数很重要，加上这个参数后创建完成后的内容会以 CSV 第一行的内容为字段名  </li>
+<li>–file Users/li/mcld/shuju.csv：这里就是 csv 文件的路径了。</li>
+</ul>
+<h3 id="导出数据"><a href="#导出数据" class="headerlink" title="导出数据"></a>导出数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongoexport -d lianjia -c zufang_location -o /Users/lzw/li.josn</span><br></pre></td></tr></table></figure>
+<ul>
+<li>mongoexport -d db -c collection -o /Users/lzw/li.josn(文件位置及文件名称)  </li>
+<li>直接在命令行执行，不是在mongo shell内执行   </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 自用笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MongoDB </tag>
             
         </tags>
         
